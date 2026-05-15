@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Maybank Timeline — 5 Events</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     MAYBANK TIMELINE — 5 EVENT DESIGN SPECIFICATION
+     This HTML is the visual source-of-truth for the .pptx output.
+     Slide dimensions: 16:9 widescreen (13.333" x 7.5" = 1280x720 at 96dpi)
+     ============================================================ */
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: #e8e8e8;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .slide {
+    /* SLIDE: 1280x720 (16:9 widescreen), pure white background */
+    width: 1280px;
+    height: 720px;
+    background: #FFFFFF;
+    margin: 24px auto;
+    padding: 56px 70px;
+    box-sizing: border-box;
+    position: relative;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  }
+
+  .title {
+    /* TITLE: 26pt, Poppins Bold, near-black */
+    font-size: 32px;
+    font-weight: 700;
+    color: #1A1A1A;
+    line-height: 1.2;
+    margin: 0 0 8px 0;
+  }
+
+  .subtitle {
+    /* SUBTITLE: 13pt, Poppins Italic, medium grey */
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 400;
+    color: #7A7A7A;
+    margin: 0 0 64px 0;
+  }
+
+  .timeline {
+    position: relative;
+    height: 360px;
+    margin-top: 24px;
+  }
+
+  .line {
+    /* HORIZONTAL TIMELINE LINE: dark gold #9C8400, 2px */
+    position: absolute;
+    top: 156px;
+    left: 70px;
+    right: 70px;
+    height: 2px;
+    background: #9C8400;
+  }
+
+  .event {
+    /* Event blocks evenly distributed along the line */
+    position: absolute;
+    width: 200px;
+    text-align: center;
+    transform: translateX(-50%);
+  }
+
+  .event-first { transform: translateX(0); text-align: left; }
+  .event-last  { transform: translateX(-100%); text-align: right; }
+
+  .date {
+    /* DATE LABEL ABOVE MARKER: 11pt, Poppins Bold, dark gold, slight letter spacing */
+    font-size: 14px;
+    font-weight: 700;
+    color: #9C8400;
+    letter-spacing: 1px;
+    margin-bottom: 80px;
+  }
+
+  .marker {
+    /* MARKER CIRCLE: yellow #FFD600, 36px, black bold number centered */
+    width: 36px;
+    height: 36px;
+    background: #FFD600;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin: 0 auto;
+    position: absolute;
+    top: 138px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .event-first .marker { left: 0; transform: translateX(0); }
+  .event-last  .marker { left: auto; right: 0; transform: translateX(0); }
+
+  .event-title {
+    /* EVENT TITLE: 12pt, Poppins Bold, near-black */
+    font-size: 16px;
+    font-weight: 600;
+    color: #1A1A1A;
+    margin-top: 16px;
+    line-height: 1.3;
+  }
+
+  .event-desc {
+    /* DESCRIPTION: 10pt, Poppins Regular, dark grey */
+    font-size: 13px;
+    font-weight: 400;
+    color: #454545;
+    margin-top: 8px;
+    line-height: 1.4;
+  }
+
+  .footer {
+    /* FOOTER: 9pt, Poppins Regular, medium grey */
+    position: absolute;
+    bottom: 32px;
+    left: 70px;
+    font-size: 11px;
+    color: #7A7A7A;
+  }
+</style>
+</head>
+<body>
+
+<!-- =============================================================
+     PLACEHOLDER TOKENS (replace these with user content):
+       {{Title}}      - slide title
+       {{Subtitle}}   - slide subtitle (optional)
+       {{E1_Date}}    - event 1 date or period
+       {{E1_Title}}   - event 1 title (short)
+       {{E1_Desc}}    - event 1 one-line description
+       {{E2_Date}}, {{E2_Title}}, {{E2_Desc}} - event 2
+       ... up to E5 for the 5-event variant
+     ============================================================= -->
+
+<div class="slide">
+
+  <div class="title">{{Title}}</div>
+  <div class="subtitle">{{Subtitle}}</div>
+
+  <div class="timeline">
+    <div class="line"></div>
+
+    <!-- EVENT 1 — left-aligned to the start of the line -->
+    <div class="event event-first" style="left: 0;">
+      <div class="date">{{E1_Date}}</div>
+      <div class="marker">1</div>
+      <div class="event-title">{{E1_Title}}</div>
+      <div class="event-desc">{{E1_Desc}}</div>
+    </div>
+
+    <!-- EVENT 2 — centered at 25% -->
+    <div class="event" style="left: 25%;">
+      <div class="date">{{E2_Date}}</div>
+      <div class="marker">2</div>
+      <div class="event-title">{{E2_Title}}</div>
+      <div class="event-desc">{{E2_Desc}}</div>
+    </div>
+
+    <!-- EVENT 3 — centered at 50% -->
+    <div class="event" style="left: 50%;">
+      <div class="date">{{E3_Date}}</div>
+      <div class="marker">3</div>
+      <div class="event-title">{{E3_Title}}</div>
+      <div class="event-desc">{{E3_Desc}}</div>
+    </div>
+
+    <!-- EVENT 4 — centered at 75% -->
+    <div class="event" style="left: 75%;">
+      <div class="date">{{E4_Date}}</div>
+      <div class="marker">4</div>
+      <div class="event-title">{{E4_Title}}</div>
+      <div class="event-desc">{{E4_Desc}}</div>
+    </div>
+
+    <!-- EVENT 5 — right-aligned to the end of the line -->
+    <div class="event event-last" style="left: 100%;">
+      <div class="date">{{E5_Date}}</div>
+      <div class="marker">5</div>
+      <div class="event-title">{{E5_Title}}</div>
+      <div class="event-desc">{{E5_Desc}}</div>
+    </div>
+
+  </div>
+
+  <div class="footer">Maybank  ·  Internal</div>
+
+</div>
+
+</body>
+</html>
