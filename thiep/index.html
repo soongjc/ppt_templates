@@ -1,0 +1,1418 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>html{-webkit-text-size-adjust:100%}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}[hidden]{display:none!important}</style>
+<meta name="description" content="Thiệp chúc mừng sinh nhật theo phong tục Việt: tự đổi mẫu theo lịch âm, Tết, Trung Thu, mừng thọ, thôi nôi, hoa sen.">
+<meta property="og:title" content="Thiệp Sinh Nhật Việt">
+<meta property="og:description" content="Thiệp sinh nhật theo phong tục Việt, tự đổi mẫu theo lịch âm.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://soongjc.github.io/ppt_templates/thiep/">
+<meta property="og:image" content="https://soongjc.github.io/ppt_templates/thiep/preview.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<title>Thiệp Sinh Nhật Việt</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;800&family=Be+Vietnam+Pro:wght@400;500;600;700&family=Dancing+Script:wght@600;700&family=Fraunces:ital,wght@0,400;0,600;0,700;1,400;1,500&family=Smooch&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700&text=%E5%A3%BD&display=swap">
+<style>
+/* Layout: the card is the hero, set on a celadon "table"; the form is a quiet column beside it (stacked on phones). */
+:root{
+  --bg:#E7EBE3; --surface:#F7F9F4; --surface-2:#EDF1E8; --ink:#1D231F; --muted:#56615A; --line:#C9D2C6;
+  --accent:#A3271F; --accent-ink:#FFF7EF; --gold:#94681B; --focus:#2C6E61;
+  --shadow:0 1px 2px rgb(20 32 24 / .08), 0 24px 48px -22px rgb(20 32 24 / .42);
+  --font-display:"Fraunces","Noto Serif",Georgia,serif;
+  --font-ui:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --r:12px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#111412; --surface:#1A1E1B; --surface-2:#222723; --ink:#E8ECE5; --muted:#A1AAA0; --line:#343C35;
+  --accent:#E36D5A; --accent-ink:#1E0E0B; --gold:#D8AE58; --focus:#80C7B3;
+  --shadow:0 1px 2px rgb(0 0 0 / .5), 0 24px 48px -22px rgb(0 0 0 / .9); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#111412; --surface:#1A1E1B; --surface-2:#222723; --ink:#E8ECE5; --muted:#A1AAA0; --line:#343C35;
+  --accent:#E36D5A; --accent-ink:#1E0E0B; --gold:#D8AE58; --focus:#80C7B3;
+  --shadow:0 1px 2px rgb(0 0 0 / .5), 0 24px 48px -22px rgb(0 0 0 / .9); color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-ui);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:22px 48px}
+.top{display:grid;gap:6px;margin-bottom:20px}
+.top h1{font-family:var(--font-display);font-weight:600;font-size:clamp(27px,5.2vw,38px);line-height:1.1;margin:0;letter-spacing:-.01em;text-wrap:balance}
+.top p{margin:0;color:var(--muted);max-width:64ch}
+.en{font-weight:400;color:var(--muted);font-size:.86em}
+.top .en{display:block}
+.app{display:grid;gap:26px;grid-template-columns:minmax(0,1fr)}
+@media (min-width:920px){.app{grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);align-items:start}.stage{position:sticky;top:calc(env(safe-area-inset-top,0px) + 16px)}}
+.stage{display:grid;gap:14px;min-width:0}
+.card-frame{width:100%;max-width:520px;margin:0 auto;aspect-ratio:4/5;border-radius:14px;overflow:hidden;box-shadow:var(--shadow);background:var(--surface-2)}
+.card-frame svg{display:block;width:100%;height:auto}
+.actions{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.btn{font:600 14px/1 var(--font-ui);padding:11px 15px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;min-height:42px}
+.btn:hover{border-color:var(--muted)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.primary:hover{filter:brightness(1.06)}
+.btn:disabled{opacity:.55;cursor:default}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.status{min-height:1.4em;margin:0;text-align:center;color:var(--muted);font-size:13.5px}
+.why{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;max-width:520px;width:100%;margin:0 auto}
+.why h2{font:600 13px/1.3 var(--font-ui);letter-spacing:.06em;text-transform:uppercase;margin:0 0 8px;color:var(--gold)}
+.why h2 .en{text-transform:none;letter-spacing:0;margin-left:6px}
+.why dl{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 14px;margin:0}
+.why dt{color:var(--muted);font-size:13px;white-space:nowrap}
+.why dd{margin:0;min-width:0;font-size:14px}
+.why dd small{display:block;color:var(--muted);font-size:12.5px}
+.panel{display:grid;gap:16px;min-width:0}
+.presets{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.presets .lbl{font-size:13px;color:var(--muted);margin-right:2px}
+.chip{font:500 13.5px/1 var(--font-ui);padding:9px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;display:inline-flex;align-items:center;gap:7px;min-height:38px}
+.chip i{width:12px;height:12px;border-radius:50%;display:inline-block;flex:none}
+.chip:hover{border-color:var(--muted)}
+.form{display:grid;gap:16px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px 16px}
+.field{display:grid;gap:6px;min-width:0;border:0;margin:0;padding:0}
+.field>label,.field legend,.lbl-row label{font-weight:600;font-size:14px;padding:0}
+.lbl-row{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.row2{display:grid;gap:16px;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+@media (max-width:420px){.row2{grid-template-columns:minmax(0,1fr)}}
+input[type=text],input[type=date],select,textarea{font:400 15px/1.4 var(--font-ui);color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 12px;width:100%;min-width:0;min-height:44px}
+textarea{resize:vertical;min-height:96px;line-height:1.5}
+input:focus,select:focus,textarea:focus{border-color:var(--focus);outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--focus) 22%,transparent)}
+.hint{margin:0;color:var(--muted);font-size:13px}
+.tag{font:600 11px/1 var(--font-ui);letter-spacing:.06em;text-transform:uppercase;color:var(--accent);border:1px solid currentColor;border-radius:999px;padding:4px 8px}
+.seg{display:flex;flex-wrap:wrap;gap:4px;background:var(--surface-2);border:1px solid var(--line);border-radius:11px;padding:4px}
+.seg input{position:absolute;opacity:0;pointer-events:none}
+.seg label{flex:1 1 auto;text-align:center;padding:8px 10px;border-radius:8px;cursor:pointer;font-size:14px;color:var(--muted);min-height:38px;display:flex;align-items:center;justify-content:center;gap:6px}
+.seg input:checked+label{background:var(--surface);color:var(--ink);font-weight:600;box-shadow:0 1px 2px rgb(0 0 0 / .12)}
+.seg input:focus-visible+label{outline:2px solid var(--focus);outline-offset:1px}
+.themes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+@media (max-width:420px){.themes{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.themes input{position:absolute;opacity:0;pointer-events:none}
+.themes label{display:grid;gap:6px;padding:8px;border:1px solid var(--line);border-radius:10px;cursor:pointer;background:var(--bg);font-size:13.5px;font-weight:500;min-width:0}
+.themes label span{display:block;height:34px;border-radius:6px}
+.themes label em{font-style:normal;color:var(--muted);font-size:12px;font-weight:400;display:block;line-height:1.25}
+.themes input:checked+label{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.themes input:focus-visible+label{outline:2px solid var(--focus);outline-offset:1px}
+.link{font:600 13px/1 var(--font-ui);color:var(--accent);background:none;border:0;padding:6px 0;cursor:pointer}
+.more summary{cursor:pointer;font-weight:600;font-size:14px;padding:4px 0}
+.more[open] summary{margin-bottom:12px}
+.more .inner{display:grid;gap:14px}
+.viewer{position:fixed;inset:0;z-index:50;background:#0B0D0C;display:grid;place-items:center;padding:calc(env(safe-area-inset-top,0px) + 56px) max(16px,env(safe-area-inset-right,0px)) calc(env(safe-area-inset-bottom,0px) + 16px) max(16px,env(safe-area-inset-left,0px))}
+.viewer-card{width:min(100%,calc((100dvh - 96px) * .8),640px);aspect-ratio:4/5;border-radius:12px;overflow:hidden;box-shadow:0 30px 80px rgb(0 0 0 / .6)}
+.viewer-card svg{display:block;width:100%;height:auto}
+.viewer-bar{position:fixed;top:calc(env(safe-area-inset-top,0px) + 12px);right:calc(env(safe-area-inset-right,0px) + 14px);display:flex;gap:8px}
+.viewer-btn{font:600 14px/1 var(--font-ui);padding:11px 16px;border-radius:999px;border:1px solid rgb(255 255 255 / .3);background:rgb(255 255 255 / .1);color:#fff;cursor:pointer;min-height:40px}
+.dob{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.15fr) minmax(0,1fr);gap:8px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.seg input:disabled+label{opacity:.45;cursor:not-allowed}
+/* Card motion (live view only; the PNG is static) */
+.fx-fall{animation:fx-fall linear infinite;transform-box:fill-box;transform-origin:center}
+@keyframes fx-fall{0%{transform:translate(0,-70px) rotate(0)}50%{transform:translate(30px,480px) rotate(170deg)}100%{transform:translate(-8px,1090px) rotate(350deg)}}
+.fx-tw{animation:fx-tw 3.4s ease-in-out infinite}
+@keyframes fx-tw{0%,100%{opacity:.2}50%{opacity:1}}
+.fx-pulse{animation:fx-pulse 3.8s ease-in-out infinite}
+@keyframes fx-pulse{0%,100%{opacity:.6}50%{opacity:1}}
+.fx-sway{animation:fx-sway 3.2s ease-in-out infinite;transform-box:fill-box;transform-origin:50% 0}
+@keyframes fx-sway{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
+.fx-rise{animation:fx-rise linear infinite}
+@keyframes fx-rise{0%{transform:translateY(0);opacity:0}15%{opacity:.85}100%{transform:translateY(-280px);opacity:0}}
+.fx-hover{animation:fx-hover 5s ease-in-out infinite}
+@keyframes fx-hover{0%,100%{transform:translate(0,0)}50%{transform:translate(-10px,-9px)}}
+@media (prefers-reduced-motion:reduce){.fx{display:none}.fx-tw,.fx-pulse,.fx-sway,.fx-hover{animation:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <h1>Thiệp Sinh Nhật Việt</h1>
+    <p>Nhập tên và ngày sinh, mẫu thiệp tự đổi theo lịch âm: Tết, Trung Thu, mừng thọ, thôi nôi hoặc hoa sen.
+      <span class="en">Type a name and birthday. The design follows the Vietnamese lunar calendar.</span></p>
+  </header>
+
+  <main class="app">
+    <section class="stage" aria-label="Xem trước thiệp">
+      <div class="card-frame" id="cardFrame"></div>
+      <div class="actions">
+        <button type="button" class="btn primary" id="btnPng">Tải ảnh PNG</button>
+        <button type="button" class="btn" id="btnView">Xem toàn màn hình</button>
+        <button type="button" class="btn" id="btnLink" hidden>Chép link thiệp</button>
+        <button type="button" class="btn" id="btnCopy">Chép lời chúc</button>
+      </div>
+      <p class="status" id="status" role="status" aria-live="polite"></p>
+      <section class="why" aria-labelledby="whyTitle">
+        <h2 id="whyTitle">Vì sao chọn mẫu này<span class="en">Why this design</span></h2>
+        <dl id="why"></dl>
+      </section>
+    </section>
+
+    <section class="panel" aria-label="Thông tin thiệp">
+      <div class="presets" id="presets">
+        <span class="lbl">Thử nhanh <span class="en">Examples</span></span>
+        <button type="button" class="chip" data-preset="tet"><i style="background:#C9242B"></i>Tết</button>
+        <button type="button" class="chip" data-preset="trungthu"><i style="background:#1B2A5E"></i>Trung Thu</button>
+        <button type="button" class="chip" data-preset="tho"><i style="background:#E9DCBF;box-shadow:inset 0 0 0 3px #A8231C"></i>Mừng thọ</button>
+        <button type="button" class="chip" data-preset="be"><i style="background:#FFC857"></i>Thôi nôi</button>
+        <button type="button" class="chip" data-preset="sen"><i style="background:#E77D9C"></i>Hoa sen</button>
+      </div>
+
+      <form class="form" id="form" autocomplete="off" novalidate>
+        <div class="field">
+          <div class="lbl-row"><label for="f-ten">Họ và tên <span class="en">Full name</span></label><span class="tag" id="exampleTag" hidden>Ví dụ</span></div>
+          <input id="f-ten" type="text" spellcheck="false" autocapitalize="words" placeholder="Nguyễn Thị Minh Anh">
+          <p class="hint" id="h-ten"></p>
+        </div>
+        <div class="row2">
+          <div class="field">
+            <label for="f-goi">Tên gọi <span class="en">Called</span></label>
+            <input id="f-goi" type="text" spellcheck="false" placeholder="Tự động">
+          </div>
+          <div class="field">
+            <label for="f-xh">Xưng hô <span class="en">Address as</span></label>
+            <select id="f-xh">
+              <optgroup label="Bạn bè, đồng nghiệp">
+                <option value="chị">chị · older woman</option><option value="anh">anh · older man</option>
+                <option value="em">em · younger</option><option value="bạn">bạn · friend</option><option value="sếp">sếp · boss</option>
+              </optgroup>
+              <optgroup label="Gia đình">
+                <option value="mẹ">mẹ · mum</option><option value="bố">bố · dad</option>
+                <option value="má">má · mum (Nam)</option><option value="ba">ba · dad (Nam)</option>
+                <option value="bà">bà · grandma</option><option value="ông">ông · grandpa</option>
+                <option value="con">con · my child</option><option value="bé">bé · little one</option>
+              </optgroup>
+              <optgroup label="Họ hàng, thầy cô">
+                <option value="cô">cô · aunt / teacher</option><option value="chú">chú · uncle</option>
+                <option value="bác">bác · elder aunt/uncle</option><option value="dì">dì · aunt (mum's side)</option>
+                <option value="cậu">cậu · uncle (mum's side)</option><option value="thầy">thầy · teacher</option>
+              </optgroup>
+            </select>
+          </div>
+        </div>
+        <fieldset class="field">
+          <legend>Ngày sinh <span class="en">Birthday, solar calendar</span></legend>
+          <div class="dob">
+            <label class="sr" for="f-d">Ngày</label><select id="f-d" aria-label="Ngày"></select>
+            <label class="sr" for="f-m">Tháng</label><select id="f-m" aria-label="Tháng"></select>
+            <label class="sr" for="f-y">Năm</label><input id="f-y" type="text" inputmode="numeric" maxlength="4" placeholder="Năm sinh" aria-label="Năm sinh">
+          </div>
+          <p class="hint" id="h-ns"></p>
+        </fieldset>
+        <fieldset class="field">
+          <legend>Mừng theo <span class="en">Celebrate on</span></legend>
+          <div class="seg">
+            <input type="radio" name="lich" id="lich-duong" value="duong"><label for="lich-duong">Dương lịch</label>
+            <input type="radio" name="lich" id="lich-am" value="am"><label for="lich-am">Âm lịch</label>
+          </div>
+          <p class="hint">Ông bà, cha mẹ và lễ thôi nôi thường mừng theo ngày âm lịch. <span class="en">Elders and first birthdays often follow the lunar date.</span></p>
+        </fieldset>
+        <fieldset class="field">
+          <legend>Mẫu thiệp <span class="en">Design</span></legend>
+          <div class="themes" id="themes">
+            <input type="radio" name="mau" id="mau-auto" value="auto"><label for="mau-auto"><span style="background:linear-gradient(90deg,#B81C22 0 20%,#16224C 20% 40%,#EFE4CB 40% 60%,#FFD2BE 60% 80%,#E77D9C 80%)"></span>Tự động<em id="autoName">theo ngày sinh</em></label>
+            <input type="radio" name="mau" id="mau-tet" value="tet"><label for="mau-tet"><span style="background:linear-gradient(135deg,#8E1016,#D12A31 55%,#F6C55E)"></span>Tết<em>đào · mai · lì xì</em></label>
+            <input type="radio" name="mau" id="mau-trungthu" value="trungthu"><label for="mau-trungthu"><span style="background:linear-gradient(135deg,#0B1530,#2B2459 58%,#F7C964)"></span>Trung Thu<em>trăng · đèn ông sao</em></label>
+            <input type="radio" name="mau" id="mau-tho" value="tho"><label for="mau-tho"><span style="background:linear-gradient(135deg,#F4EAD5 0 55%,#A8231C 55%)"></span>Mừng thọ<em>chữ Thọ · đào tiên</em></label>
+            <input type="radio" name="mau" id="mau-be" value="be"><label for="mau-be"><span style="background:linear-gradient(135deg,#BFEBDD,#FFD2BE 55%,#8AB4F8)"></span>Thôi nôi &amp; bé<em>mẹt bốc đồ · đồ chơi</em></label>
+            <input type="radio" name="mau" id="mau-sen" value="sen"><label for="mau-sen"><span style="background:linear-gradient(135deg,#E9F0E6,#F3DCD8 55%,#E77D9C)"></span>Hoa sen<em>trống đồng · hồ sen</em></label>
+          </div>
+        </fieldset>
+        <fieldset class="field">
+          <legend>Miền <span class="en">Region</span></legend>
+          <div class="seg">
+            <input type="radio" name="mien" id="mien-bac" value="bac"><label for="mien-bac">Bắc · hoa đào, bánh chưng</label>
+            <input type="radio" name="mien" id="mien-nam" value="nam"><label for="mien-nam">Nam · hoa mai, bánh tét</label>
+          </div>
+        </fieldset>
+        <div class="field">
+          <div class="lbl-row"><label for="f-loi">Lời chúc <span class="en">Wish</span></label><button type="button" class="link" id="btnNextWish">Gợi ý khác</button></div>
+          <textarea id="f-loi" rows="4"></textarea>
+          <p class="hint">Sửa thoải mái. Xoá trắng sẽ quay về lời chúc gợi ý. <span class="en">Edit freely; clear it to use the suggestion.</span></p>
+        </div>
+        <div class="field">
+          <label for="f-tu">Người gửi <span class="en">From</span></label>
+          <input id="f-tu" type="text" placeholder="Cả team">
+        </div>
+        <details class="more">
+          <summary>Tuỳ chọn thêm <span class="en">More options</span></summary>
+          <div class="inner">
+            <fieldset class="field">
+              <legend>Hiện tuổi trên thiệp <span class="en">Show age</span></legend>
+              <div class="seg">
+                <input type="radio" name="tuoi" id="tuoi-auto" value="auto"><label for="tuoi-auto">Tự động</label>
+                <input type="radio" name="tuoi" id="tuoi-on" value="on"><label for="tuoi-on">Có</label>
+                <input type="radio" name="tuoi" id="tuoi-off" value="off"><label for="tuoi-off">Không</label>
+              </div>
+            </fieldset>
+            <fieldset class="field">
+              <legend>Tuổi mừng thọ <span class="en">Age for longevity cards</span></legend>
+              <div class="seg">
+                <input type="radio" name="mu" id="mu-0" value="0"><label for="mu-0">Tuổi thật</label>
+                <input type="radio" name="mu" id="mu-1" value="1"><label for="mu-1">Tuổi mụ (truyền thống)</label>
+              </div>
+            </fieldset>
+            <div class="field">
+              <label for="f-nam">Năm tổ chức <span class="en">Celebration year</span></label>
+              <select id="f-nam"></select>
+            </div>
+          </div>
+        </details>
+      </form>
+    </section>
+  </main>
+</div>
+
+<div class="viewer" id="viewer" hidden>
+  <div class="viewer-bar">
+    <button type="button" class="viewer-btn" id="viewerPng">Tải ảnh</button>
+    <button type="button" class="viewer-btn" id="viewerClose">Đóng</button>
+  </div>
+  <div class="viewer-card" id="viewerCard"></div>
+</div>
+<script>
+(function () {
+'use strict';
+
+/* ==================================================================
+   CONFIG · Sửa tên và ngày sinh ở đây (edit the card defaults here)
+   ------------------------------------------------------------------
+   Khi file được host (GitHub Pages…), có thể đổi bằng link, ví dụ:
+   ?ten=Trần%20Văn%20Nam&xh=anh&ns=30/01/1990&tu=Cả%20team&xem=1
+   ten=họ tên · goi=tên gọi · xh=xưng hô · ns=ngày sinh DD/MM[/YYYY]
+   al=1 (âm lịch) · mien=bac|nam · mau=auto|tet|trungthu|tho|be|sen
+   loi=lời chúc · tu=người gửi · xem=1 (chỉ hiện thiệp)
+   ================================================================== */
+const CONFIG = {
+  ten: 'Tống Kính Quyền',   // Họ và tên, thứ tự Việt: Họ · đệm · tên
+  goi: '',                  // Tên gọi / biệt danh. Trống = lấy chữ cuối (Quyền)
+  xungHo: 'anh',            // anh chị em bạn sếp · bố mẹ ba má ông bà con bé · cô chú bác dì cậu thầy
+  ngaySinh: '18/08',        // 'DD/MM' hoặc 'DD/MM/YYYY' (dương lịch)
+  amLich: false,            // true = mừng sinh nhật theo ngày âm lịch (cần năm sinh)
+  mien: 'bac',              // 'bac' = hoa đào, bánh chưng · 'nam' = hoa mai, bánh tét
+  mau: 'auto',              // 'auto' | 'tet' | 'trungthu' | 'tho' | 'be' | 'sen'
+  loiChuc: '',              // Lời chúc riêng. Trống = tự chọn theo mẫu
+  nguoiGui: '',             // Người gửi, ký ở cuối thiệp
+  hienTuoi: 'auto',         // 'auto' | 'on' | 'off'
+  tuoiMu: false,            // true = tuổi mừng thọ tính theo tuổi mụ
+  namToChuc: 'auto',        // 'auto' hoặc năm cụ thể, ví dụ 2027
+};
+const TET_BEFORE = 15, TET_AFTER = 14;        // ±ngày quanh mùng 1 Tết → mẫu Tết
+const TT_BEFORE = 14, TT_AFTER = 5;           // quanh Rằm tháng Tám → mẫu Trung Thu
+const THO_FROM = 60;                          // từ tuổi này → mẫu mừng thọ
+const GRACE_DAYS = 7;                         // sinh nhật vừa qua ≤ 7 ngày vẫn tính năm nay
+
+/* ---------- Âm lịch Việt Nam · thuật toán Hồ Ngọc Đức, múi giờ UTC+7 ---------- */
+const TZ = 7, INT = Math.floor;
+function jdFromDate(dd, mm, yy) {
+  const a = INT((14 - mm) / 12), y = yy + 4800 - a, m = mm + 12 * a - 3;
+  let jd = dd + INT((153 * m + 2) / 5) + 365 * y + INT(y / 4) - INT(y / 100) + INT(y / 400) - 32045;
+  if (jd < 2299161) jd = dd + INT((153 * m + 2) / 5) + 365 * y + INT(y / 4) - 32083;
+  return jd;
+}
+function jdToDate(jd) {
+  let a, b, c;
+  if (jd > 2299160) { a = jd + 32044; b = INT((4 * a + 3) / 146097); c = a - INT((b * 146097) / 4); }
+  else { b = 0; c = jd + 32082; }
+  const d = INT((4 * c + 3) / 1461), e = c - INT((1461 * d) / 4), m = INT((5 * e + 2) / 153);
+  return [e - INT((153 * m + 2) / 5) + 1, m + 3 - 12 * INT(m / 10), b * 100 + d - 4800 + INT(m / 10)];
+}
+function newMoonDay(k, tz) {
+  const T = k / 1236.85, T2 = T * T, T3 = T2 * T, dr = Math.PI / 180;
+  let Jd1 = 2415020.75933 + 29.53058868 * k + 0.0001178 * T2 - 0.000000155 * T3;
+  Jd1 += 0.00033 * Math.sin((166.56 + 132.87 * T - 0.009173 * T2) * dr);
+  const M = 359.2242 + 29.10535608 * k - 0.0000333 * T2 - 0.00000347 * T3;
+  const Mpr = 306.0253 + 385.81691806 * k + 0.0107306 * T2 + 0.00001236 * T3;
+  const F = 21.2964 + 390.67050646 * k - 0.0016528 * T2 - 0.00000239 * T3;
+  let C1 = (0.1734 - 0.000393 * T) * Math.sin(M * dr) + 0.0021 * Math.sin(2 * dr * M);
+  C1 = C1 - 0.4068 * Math.sin(Mpr * dr) + 0.0161 * Math.sin(dr * 2 * Mpr);
+  C1 = C1 - 0.0004 * Math.sin(dr * 3 * Mpr);
+  C1 = C1 + 0.0104 * Math.sin(dr * 2 * F) - 0.0051 * Math.sin(dr * (M + Mpr));
+  C1 = C1 - 0.0074 * Math.sin(dr * (M - Mpr)) + 0.0004 * Math.sin(dr * (2 * F + M));
+  C1 = C1 - 0.0004 * Math.sin(dr * (2 * F - M)) - 0.0006 * Math.sin(dr * (2 * F + Mpr));
+  C1 = C1 + 0.0010 * Math.sin(dr * (2 * F - Mpr)) + 0.0005 * Math.sin(dr * (2 * Mpr + M));
+  const deltat = T < -11
+    ? 0.001 + 0.000839 * T + 0.0002261 * T2 - 0.00000845 * T3 - 0.000000081 * T * T3
+    : -0.000278 + 0.000265 * T + 0.000262 * T2;
+  return INT(Jd1 + C1 - deltat + 0.5 + tz / 24);
+}
+function sunLongitude(jdn, tz) {
+  const T = (jdn - 2451545.5 - tz / 24) / 36525, T2 = T * T, dr = Math.PI / 180;
+  const M = 357.52910 + 35999.05030 * T - 0.0001559 * T2 - 0.00000048 * T * T2;
+  const L0 = 280.46645 + 36000.76983 * T + 0.0003032 * T2;
+  let DL = (1.914600 - 0.004817 * T - 0.000014 * T2) * Math.sin(dr * M);
+  DL += (0.019993 - 0.000101 * T) * Math.sin(dr * 2 * M) + 0.000290 * Math.sin(dr * 3 * M);
+  let L = (L0 + DL) * dr;
+  L = L - Math.PI * 2 * INT(L / (Math.PI * 2));
+  return INT(L / Math.PI * 6);
+}
+function lunarMonth11(yy, tz) {
+  const k = INT((jdFromDate(31, 12, yy) - 2415021) / 29.530588853);
+  let nm = newMoonDay(k, tz);
+  if (sunLongitude(nm, tz) >= 9) nm = newMoonDay(k - 1, tz);
+  return nm;
+}
+function leapMonthOffset(a11, tz) {
+  const k = INT((a11 - 2415021.076998695) / 29.530588853 + 0.5);
+  let last, i = 1, arc = sunLongitude(newMoonDay(k + i, tz), tz);
+  do { last = arc; i++; arc = sunLongitude(newMoonDay(k + i, tz), tz); } while (arc !== last && i < 14);
+  return i - 1;
+}
+function solarToLunar(dd, mm, yy) {
+  const dayNumber = jdFromDate(dd, mm, yy);
+  const k = INT((dayNumber - 2415021.076998695) / 29.530588853);
+  let monthStart = newMoonDay(k + 1, TZ);
+  if (monthStart > dayNumber) monthStart = newMoonDay(k, TZ);
+  let a11 = lunarMonth11(yy, TZ), b11 = a11, lunarYear;
+  if (a11 >= monthStart) { lunarYear = yy; a11 = lunarMonth11(yy - 1, TZ); }
+  else { lunarYear = yy + 1; b11 = lunarMonth11(yy + 1, TZ); }
+  const day = dayNumber - monthStart + 1, diff = INT((monthStart - a11) / 29);
+  let leap = false, month = diff + 11;
+  if (b11 - a11 > 365) {
+    const lm = leapMonthOffset(a11, TZ);
+    if (diff >= lm) { month = diff + 10; if (diff === lm) leap = true; }
+  }
+  if (month > 12) month -= 12;
+  if (month >= 11 && diff < 4) lunarYear -= 1;
+  return { day, month, year: lunarYear, leap, jd: dayNumber };
+}
+function lunarToSolar(day, month, year, leap) {
+  let a11, b11;
+  if (month < 11) { a11 = lunarMonth11(year - 1, TZ); b11 = lunarMonth11(year, TZ); }
+  else { a11 = lunarMonth11(year, TZ); b11 = lunarMonth11(year + 1, TZ); }
+  const k = INT(0.5 + (a11 - 2415021.076998695) / 29.530588853);
+  let off = month - 11; if (off < 0) off += 12;
+  if (b11 - a11 > 365) {
+    const leapOff = leapMonthOffset(a11, TZ);
+    let leapMonth = leapOff - 2; if (leapMonth < 0) leapMonth += 12;
+    if (leap && month !== leapMonth) return null;
+    if (leap || off >= leapOff) off += 1;
+  } else if (leap) return null;
+  const jd = newMoonDay(k + off, TZ) + day - 1;
+  const [d, m, y] = jdToDate(jd);
+  return { day: d, month: m, year: y, jd };
+}
+
+/* ---------- Dữ liệu tiếng Việt ---------- */
+const CAN = ['Giáp', 'Ất', 'Bính', 'Đinh', 'Mậu', 'Kỷ', 'Canh', 'Tân', 'Nhâm', 'Quý'];
+const CHI = ['Tý', 'Sửu', 'Dần', 'Mão', 'Thìn', 'Tỵ', 'Ngọ', 'Mùi', 'Thân', 'Dậu', 'Tuất', 'Hợi'];
+const GIAP = ['Chuột', 'Trâu', 'Hổ', 'Mèo', 'Rồng', 'Rắn', 'Ngựa', 'Dê', 'Khỉ', 'Gà', 'Chó', 'Lợn'];
+const THANG = ['Giêng', 'Hai', 'Ba', 'Tư', 'Năm', 'Sáu', 'Bảy', 'Tám', 'Chín', 'Mười', 'Mười Một', 'Chạp'];
+const THU = ['Chủ Nhật', 'Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy'];
+const THEME_NAME = { auto: 'Tự động', tet: 'Tết', trungthu: 'Trung Thu', tho: 'Mừng thọ', be: 'Thôi nôi & bé', sen: 'Hoa sen' };
+const canChi = y => CAN[(y + 6) % 10] + ' ' + CHI[(y + 8) % 12];
+const conGiap = (y, mien) => { const a = GIAP[(y + 8) % 12]; return a === 'Lợn' && mien === 'nam' ? 'Heo' : a; };
+const ngayAm = d => d <= 10 ? 'mùng ' + d : d === 15 ? 'rằm' : 'ngày ' + d;
+const lunarText = L => `${ngayAm(L.day)} tháng ${THANG[L.month - 1]}${L.leap ? ' nhuận' : ''} năm ${canChi(L.year)}`;
+const cap = s => s ? s.charAt(0).toLocaleUpperCase('vi') + s.slice(1) : s;
+const pad2 = n => String(n).padStart(2, '0');
+const weekday = jd => (jd + 1) % 7;
+const isLeapYear = y => (y % 4 === 0 && y % 100 !== 0) || y % 400 === 0;
+const daysIn = (m, y) => [31, (y == null || isLeapYear(y)) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][m - 1];
+const strip = s => s.normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/đ/g, 'd').replace(/Đ/g, 'D');
+
+// Xưng hô: g = giới (m/f), grp = nhóm quan hệ, solo = không kèm tên trong câu chúc
+const XH = {
+  'anh': { g: 'm', grp: 'peer' }, 'chị': { g: 'f', grp: 'peer' }, 'em': { g: '', grp: 'peer' },
+  'bạn': { g: '', grp: 'peer' }, 'sếp': { g: '', grp: 'peer' },
+  'bố': { g: 'm', grp: 'parent', solo: true }, 'mẹ': { g: 'f', grp: 'parent', solo: true },
+  'ba': { g: 'm', grp: 'parent', solo: true }, 'má': { g: 'f', grp: 'parent', solo: true },
+  'ông': { g: 'm', grp: 'elder', solo: true }, 'bà': { g: 'f', grp: 'elder', solo: true },
+  'con': { g: '', grp: 'child', solo: true }, 'bé': { g: '', grp: 'child' },
+  'cô': { g: 'f', grp: 'elder' }, 'chú': { g: 'm', grp: 'elder' }, 'bác': { g: '', grp: 'elder' },
+  'dì': { g: 'f', grp: 'elder' }, 'cậu': { g: 'm', grp: 'elder' }, 'thầy': { g: 'm', grp: 'elder' },
+};
+// Họ phổ biến, để nhận ra tên viết kiểu Tây ("Anh Nguyen") và lấy đúng tên gọi
+const HO = new Set('nguyen tran le pham hoang huynh phan vu vo dang bui do ho ngo duong ly dao doan dinh truong luong trinh quach ta ton luu khuc diep vuong trieu tong lam mai cao ha thai chau la kieu thach hua lai tang giang'.split(' '));
+const HO_TAY = new Set(['nguyễn', 'nguyen', 'trần', 'tran', 'phạm', 'pham', 'huỳnh', 'huynh', 'đặng', 'dang', 'bùi', 'bui', 'ngô', 'ngo', 'võ', 'đỗ', 'lê', 'tống']);
+
+function titleCase(s) {
+  return s.normalize('NFC').trim().replace(/\s+/g, ' ').split(' ')
+    .map(w => w.charAt(0).toLocaleUpperCase('vi') + w.slice(1).toLocaleLowerCase('vi')).join(' ');
+}
+function callNameOf(full) {
+  const t = full.split(' ').filter(Boolean);
+  if (t.length < 2) return t[0] || '';
+  const first = strip(t[0]).toLowerCase(), last = t[t.length - 1].toLocaleLowerCase('vi');
+  if (HO_TAY.has(last) && !HO.has(first)) return t[t.length - 2];   // "Minh Anh Nguyễn" → Anh
+  return t[t.length - 1];                                            // "Nguyễn Thị Minh Anh" → Anh
+}
+
+/* ---------- Lời chúc ---------- */
+const WISH = {
+  sen: [
+    'Chúc {pn} tuổi mới thật nhiều sức khỏe, bình an và hạnh phúc. Mong mọi điều {p} ấp ủ đều sớm thành hiện thực.',
+    'Tuổi mới, chúc {p} vạn sự như ý, công việc hanh thông, gia đình êm ấm và luôn rạng rỡ như hôm nay.',
+    'Chúc {pn} một tuổi mới an yên, sức khỏe dồi dào, tâm hồn thư thái và luôn có những người thương ở bên.',
+    'Thêm một tuổi, thêm nhiều niềm vui. Chúc {p} luôn mạnh khỏe, may mắn và gặt hái thật nhiều thành công.',
+    'Chúc {pn} tuổi mới thanh khiết như hoa sen đầu hạ, tươi tắn, ngát hương và luôn vững vàng trước mọi sóng gió.',
+  ],
+  tet: [
+    'Năm mới, tuổi mới, niềm vui nhân đôi! Chúc {pn} an khang thịnh vượng, vạn sự như ý và một năm {nam} thật rực rỡ.',
+    'Tết này {p} được mừng tuổi hai lần! Chúc {p} sức khỏe dồi dào, tiền vào như nước, tình cảm ngọt ngào như mứt Tết.',
+    'Chúc {pn} tuổi mới tươi thắm như sắc {hoa} ngày xuân, ấm áp như bên nồi {banh} đêm giao thừa.',
+    'Xuân sang, tuổi mới gõ cửa. Chúc {p} một năm {nam} bình an, may mắn và mọi dự định đều suôn sẻ.',
+  ],
+  trungthu: [
+    'Chúc {pn} tuổi mới tròn đầy như trăng rằm tháng Tám, ngọt ngào như bánh nướng bánh dẻo và rực rỡ như đèn ông sao.',
+    'Sinh nhật đúng mùa trăng đẹp nhất năm! Chúc {p} luôn bình an, vui vẻ và mọi ước mong đều sáng như ánh trăng rằm.',
+  ],
+  trungthuKid: [
+    'Chúc {pn} tuổi mới vui như đêm rước đèn, ngoan ngoãn, học giỏi và luôn được cả nhà yêu thương.',
+    'Chúc {pn} tuổi mới tròn đầy như trăng rằm tháng Tám, ngọt ngào như bánh dẻo và rực rỡ như đèn ông sao.',
+  ],
+  tho: [
+    'Kính chúc {p} sống lâu trăm tuổi, thân tâm an lạc, mãi là cây cao bóng cả của con cháu.',
+    'Kính chúc {p} mạnh khỏe, minh mẫn, vui vầy bên con cháu và hưởng trọn phúc lộc an khang.',
+    'Kính chúc {p} phúc thọ song toàn, tuổi càng cao càng thêm khang an, gia đình sum vầy đầm ấm.',
+  ],
+  thoinoi: [
+    'Mừng {pn} tròn một tuổi! Chúc {p} hay ăn chóng lớn, ngoan ngoãn, khỏe mạnh và luôn là niềm vui của cả nhà.',
+    'Chúc {pn} được các Bà Mụ phù hộ, hay ăn chóng lớn, ngủ ngoan, lanh lợi và lớn khôn từng ngày.',
+  ],
+  be: [
+    'Chúc {pn} tuổi mới chăm ngoan, học giỏi, luôn khỏe mạnh và vui tươi.',
+    'Chúc {pn} thêm tuổi mới thêm lớn khôn, hay ăn chóng lớn và có thật nhiều niềm vui bên gia đình.',
+    'Sinh nhật vui vẻ nhé {pn}! Chúc {p} luôn hồn nhiên, khỏe mạnh và gặp nhiều điều thú vị.',
+  ],
+};
+function hashStr(s) { let h = 2166136261; for (const c of s) { h ^= c.codePointAt(0); h = Math.imul(h, 16777619); } return h >>> 0; }
+
+/* ---------- Ngày lễ trùng sinh nhật ---------- */
+function tetContext(cjd, Lc) {
+  const ty = Lc.month >= 7 ? Lc.year + 1 : Lc.year;
+  const diff = cjd - lunarToSolar(1, 1, ty, false).jd;
+  const nam = canChi(ty);
+  const inWin = diff >= -TET_BEFORE && diff <= TET_AFTER;
+  let label = '', vi = '', en = '';
+  if (diff < 0) {
+    if (Lc.month === 12 && Lc.day === 23) { label = 'Ngày ông Công ông Táo'; vi = 'rơi vào ngày ông Công ông Táo (23 tháng Chạp)'; en = "Kitchen Gods' Day, 23rd of the last lunar month"; }
+    else if (diff === -1) { label = 'Đêm giao thừa · đón Xuân ' + nam; vi = 'rơi vào đêm giao thừa'; en = "Lunar New Year's Eve"; }
+    else { label = `Còn ${-diff} ngày nữa là Tết ${nam}`; vi = `còn ${-diff} ngày nữa là Tết`; en = `${-diff} days before Lunar New Year`; }
+  } else if (diff <= 2) { label = `Mùng ${diff + 1} Tết ${nam}`; vi = `rơi vào mùng ${diff + 1} Tết`; en = `day ${diff + 1} of Tết`; }
+  else if (diff === 14) { label = 'Rằm tháng Giêng · Tết Nguyên Tiêu'; vi = 'rơi vào Rằm tháng Giêng'; en = 'first full moon of the new year'; }
+  else { label = `${cap(ngayAm(Lc.day))} tháng Giêng · Xuân ${nam}`; vi = `rơi vào ${ngayAm(Lc.day)} tháng Giêng, vẫn trong mùa Tết`; en = 'still in the Tết season'; }
+  return { inWin, diff, ty, nam, label, vi, en };
+}
+function ttContext(cjd, Lc) {
+  const diff = cjd - lunarToSolar(15, 8, Lc.year, false).jd;
+  const inWin = diff >= -TT_BEFORE && diff <= TT_AFTER;
+  const label = diff === 0 ? 'Đúng đêm Rằm Trung Thu' : diff < 0 ? `Còn ${-diff} ngày đến Rằm Trung Thu` : 'Mùa trăng Trung Thu';
+  const vi = diff === 0 ? 'rơi đúng Rằm tháng Tám' : 'gần Rằm tháng Tám, Tết Trung Thu';
+  return { inWin, diff, label, vi, en: 'close to the Mid-Autumn full moon (15th of the 8th month)' };
+}
+function otherOccasion(C, Lc, xh, age) {
+  const g = (XH[xh] || {}).g, md = C.d + '/' + C.m;
+  if (!Lc.leap && Lc.month === 3 && Lc.day === 10) return 'Trùng ngày Giỗ Tổ Hùng Vương';
+  if (!Lc.leap && Lc.month === 5 && Lc.day === 5) return 'Trùng Tết Đoan Ngọ';
+  if (md === '8/3' && g === 'f') return 'Trùng ngày Quốc tế Phụ nữ 8/3';
+  if (md === '20/10' && g === 'f') return 'Trùng ngày Phụ nữ Việt Nam 20/10';
+  if (md === '1/6' && age != null && age <= 15) return 'Trùng ngày Quốc tế Thiếu nhi 1/6';
+  if (md === '20/11' && (xh === 'thầy' || xh === 'cô')) return 'Trùng ngày Nhà giáo Việt Nam 20/11';
+  if (C.m === 12 && (C.d === 24 || C.d === 25)) return 'Sinh nhật mùa Giáng sinh';
+  if (md === '1/1') return 'Sinh nhật ngày đầu năm mới';
+  return '';
+}
+const THO_NAME = { 60: 'Lục Tuần', 70: 'Thất Tuần', 80: 'Bát Tuần', 90: 'Cửu Tuần', 100: 'Bách Tuế' };
+const isThoMilestone = a => a >= 100 || [60, 70, 75, 80, 85, 90, 95].includes(a);
+
+/* ---------- Tính toàn bộ nội dung thiệp ---------- */
+function todayParts() { const n = new Date(); return { d: n.getDate(), m: n.getMonth() + 1, y: n.getFullYear() }; }
+
+function compute(st) {
+  const T = todayParts(), tJD = jdFromDate(T.d, T.m, T.y);
+  const m = Math.min(12, Math.max(1, +st.m || 1));
+  const yr = /^\d{4}$/.test(String(st.y || '').trim()) ? +st.y : null;
+  const hasYear = yr != null && yr >= 1900 && yr <= 2100;
+  const y = hasYear ? yr : null;
+  const d = Math.min(daysIn(m, y), Math.max(1, +st.d || 1));
+  const lunarMode = !!st.am && hasYear;
+  const Lb = hasYear ? solarToLunar(d, m, y) : null;
+  const forced = st.nam && st.nam !== 'auto' ? +st.nam : null;
+
+  let C;
+  if (!lunarMode) {
+    const occ = Y => { let dd = d; if (m === 2 && dd === 29 && !isLeapYear(Y)) dd = 28; return { d: dd, m, y: Y, jd: jdFromDate(dd, m, Y) }; };
+    if (forced) C = occ(forced);
+    else { C = occ(T.y - 1); if (C.jd < tJD - GRACE_DAYS) C = occ(T.y); if (C.jd < tJD - GRACE_DAYS) C = occ(T.y + 1); }
+    if (hasYear && C.y <= y) C = occ(y + 1);
+  } else {
+    const occL = ly => {
+      let r = lunarToSolar(Lb.day, Lb.month, ly, Lb.leap) || lunarToSolar(Lb.day, Lb.month, ly, false);
+      if (Lb.day === 30) {
+        const chk = solarToLunar(r.day, r.month, r.year);
+        if (chk.day !== 30) r = lunarToSolar(29, Lb.month, ly, false);
+      }
+      return { d: r.day, m: r.month, y: r.year, jd: r.jd, ly };
+    };
+    const Lt = solarToLunar(T.d, T.m, T.y);
+    if (forced) C = occL(forced);
+    else { C = occL(Lt.year - 1); if (C.jd < tJD - GRACE_DAYS) C = occL(Lt.year); if (C.jd < tJD - GRACE_DAYS) C = occL(Lt.year + 1); }
+    if (C.ly <= Lb.year) C = occL(Lb.year + 1);
+  }
+  const Lc = solarToLunar(C.d, C.m, C.y);
+  const age = hasYear ? (lunarMode ? C.ly - Lb.year : C.y - y) : null;
+  const mu = hasYear ? Lc.year - Lb.year + 1 : null;
+  const ageTho = hasYear ? (st.mu ? mu : age) : null;
+
+  const tet = tetContext(C.jd, Lc), tt = ttContext(C.jd, Lc);
+  let auto, whyVi, whyEn;
+  if (age === 1) { auto = 'be'; whyVi = 'tròn 1 tuổi, lễ thôi nôi'; whyEn = 'first birthday (thôi nôi)'; }
+  else if (ageTho != null && ageTho >= THO_FROM) { auto = 'tho'; whyVi = `${ageTho} tuổi, mừng thọ người cao tuổi`; whyEn = `aged ${ageTho}: a longevity card`; }
+  else if (tet.inWin) { auto = 'tet'; whyVi = tet.vi; whyEn = tet.en; }
+  else if (tt.inWin) { auto = 'trungthu'; whyVi = tt.vi; whyEn = tt.en; }
+  else if (age != null && age <= 12) { auto = 'be'; whyVi = `bé ${age} tuổi`; whyEn = `a child aged ${age}`; }
+  else { auto = 'sen'; whyVi = 'không trùng Tết hay Trung Thu'; whyEn = 'no lunar festival nearby'; }
+  const theme = st.mau && st.mau !== 'auto' && THEME_NAME[st.mau] ? st.mau : auto;
+
+  // Tên & xưng hô
+  const xh = XH[st.xh] ? st.xh : 'anh';
+  const full = titleCase(st.ten || '') || 'Bạn';
+  const callName = (st.goi || '').normalize('NFC').trim() || callNameOf(full);
+  const solo = XH[xh].solo;
+  const pn = solo ? xh : `${xh} ${callName}`;
+  const isThoiNoi = theme === 'be' && age === 1;
+  const isKid = age != null && age <= 12;
+
+  // Lời chúc
+  const bankKey = theme === 'be' ? (isThoiNoi ? 'thoinoi' : 'be') : theme === 'trungthu' && isKid ? 'trungthuKid' : theme;
+  const bank = WISH[bankKey];
+  const idx = (hashStr(full + bankKey) + (st.wishIdx || 0)) % bank.length;
+  let wishAuto = bank[idx]
+    .replace(/\{pn\}/g, pn).replace(/\{p\}/g, xh).replace(/\{nam\}/g, tet.nam)
+    .replace(/\{hoa\}/g, st.mien === 'nam' ? 'hoa mai' : 'hoa đào')
+    .replace(/\{banh\}/g, st.mien === 'nam' ? 'bánh tét' : 'bánh chưng');
+  if (theme !== 'tho') {
+    if (XH[xh].grp === 'parent') wishAuto += ` Con yêu ${xh} nhiều lắm!`;
+    else if (xh === 'con') wishAuto += ' Cả nhà yêu con nhiều lắm!';
+  }
+  const custom = (st.loi || '').normalize('NFC').trim();
+  const wish = st.dirty && custom ? custom : wishAuto;
+
+  // Tuổi trên thiệp
+  const showAge = st.tuoi === 'on' ? hasYear : st.tuoi === 'off' ? false : (hasYear && (theme === 'be' || theme === 'tho'));
+
+  // Huy hiệu (dòng nhỏ dưới tên)
+  let badge = '';
+  if (tet.inWin) badge = theme === 'tho' && tet.diff >= 0 ? `Mừng thọ đầu xuân ${tet.nam}` : tet.label;
+  else if (tt.inWin) badge = tt.label;
+  else badge = otherOccasion(C, Lc, xh, age);
+  if (!badge && theme === 'tho' && ageTho === 70) badge = 'Thất thập cổ lai hy';
+  if (!badge && hasYear) badge = `Tuổi ${canChi(Lb.year)} · con ${conGiap(Lb.year, st.mien)}`;
+
+  // Dòng trên cùng
+  let eyebrow = 'Chúc mừng sinh nhật';
+  if (theme === 'be' && isThoiNoi) eyebrow = `Mừng ${xh === 'con' ? 'con' : 'bé'} thôi nôi`;
+  if (theme !== 'tho' && theme !== 'be' && showAge && st.tuoi === 'on') eyebrow = `Mừng sinh nhật lần thứ ${age}`;
+  let thoTop = 'KÍNH CHÚC', thoLine = '';
+  if (theme === 'tho') {
+    const a = ageTho;
+    if (a != null && a >= THO_FROM && isThoMilestone(a)) {
+      thoTop = 'KÍNH MỪNG';
+      thoLine = THO_NAME[a] ? `${THO_NAME[a]} · ${a} tuổi` : `${a >= 80 ? 'Thượng thọ' : 'Mừng thọ'} ${a} tuổi`;
+    } else if (a != null && showAge) thoLine = `Mừng sinh nhật ${a} tuổi`;
+    else thoLine = 'Chúc mừng sinh nhật';
+  }
+
+  // Ký tên
+  const from = (st.tu || '').normalize('NFC').trim();
+  let sign = null;
+  if (theme === 'tho') sign = from ? { lead: 'Kính tặng', from } : { lead: 'Con cháu kính chúc', from: '' };
+  else if (from) {
+    const g = XH[xh].grp;
+    sign = { lead: g === 'elder' ? 'Kính tặng' : (g === 'parent' || g === 'child') ? 'Thương tặng' : 'Thân tặng', from };
+  }
+
+  const wd = weekday(C.jd);
+  const date1 = `${THU[wd]}, ${pad2(C.d)} · ${pad2(C.m)} · ${C.y}`;
+  const date2 = `tức ${lunarText(Lc)}`;
+  const rel = C.jd - tJD;
+  const relText = rel === 0 ? 'hôm nay' : rel > 0 ? `còn ${rel} ngày` : `đã qua ${-rel} ngày`;
+
+  return {
+    theme, auto, whyVi, whyEn, manual: theme !== auto,
+    xh, pn, full, callName, nameText: theme === 'tho' ? full : callName,
+    hasYear, y, d, m, Lb, C, Lc, age, mu, ageTho, lunarMode, isThoiNoi, isKid, showAge,
+    eyebrow, badge, wish, wishAuto, date1, date2, relText, sign, thoTop, thoLine,
+    mien: st.mien === 'nam' ? 'nam' : 'bac', tet, tt,
+    seed: hashStr(full + theme + (st.mien || '')),
+    birthLunar: Lb ? lunarText(Lb) : '',
+  };
+}
+
+
+/* ================= Vẽ thiệp · SVG 800×1000 ================= */
+const FONT = {
+  display: '"Fraunces", "Noto Serif", Georgia, serif',
+  script: '"Dancing Script", "Brush Script MT", cursive',
+  brush: '"Smooch", "Dancing Script", cursive',
+  ui: '"Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
+  round: '"Baloo 2", "Be Vietnam Pro", system-ui, sans-serif',
+  han: '"Noto Serif TC", "Noto Serif CJK TC", "Songti TC", "PMingLiU", "MingLiU", serif',
+};
+const r1 = n => Math.round(n * 10) / 10;
+const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+function mulberry32(a) { return function () { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+function bz(p, t) { const u = 1 - t; return [u * u * u * p[0][0] + 3 * u * u * t * p[1][0] + 3 * u * t * t * p[2][0] + t * t * t * p[3][0], u * u * u * p[0][1] + 3 * u * u * t * p[1][1] + 3 * u * t * t * p[2][1] + t * t * t * p[3][1]]; }
+function bzTan(p, t) { const u = 1 - t; return [3 * u * u * (p[1][0] - p[0][0]) + 6 * u * t * (p[2][0] - p[1][0]) + 3 * t * t * (p[3][0] - p[2][0]), 3 * u * u * (p[1][1] - p[0][1]) + 6 * u * t * (p[2][1] - p[1][1]) + 3 * t * t * (p[3][1] - p[2][1])]; }
+const unit = v => { const k = Math.hypot(v[0], v[1]) || 1; return [v[0] / k, v[1] / k]; };
+const deg = r => r * 180 / Math.PI;
+function bzLen(p) { let L = 0, prev = bz(p, 0); for (let i = 1; i <= 16; i++) { const q = bz(p, i / 16); L += Math.hypot(q[0] - prev[0], q[1] - prev[1]); prev = q; } return L; }
+function limbPath(L, phase) {
+  const N = 26, A = [], B = [];
+  for (let i = 0; i <= N; i++) {
+    const t = i / N, [x, y] = bz(L.p, t), [tx, ty] = unit(bzTan(L.p, t));
+    const w = (L.w0 + (L.w1 - L.w0) * Math.pow(t, .85)) / 2 * (1 + .09 * Math.sin(t * 19 + phase));
+    A.push(r1(x - ty * w) + ' ' + r1(y + tx * w)); B.push(r1(x + ty * w) + ' ' + r1(y - tx * w));
+  }
+  return 'M' + A.join('L') + 'L' + B.reverse().join('L') + 'Z';
+}
+const grainDefs = P => `<filter id="${P}grain" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter>`;
+const grainRect = (P, op) => `<rect width="800" height="1000" filter="url(#${P}grain)" opacity="${op}" style="mix-blend-mode:soft-light"/>`;
+const sparkle = (x, y, r) => `<path d="M${r1(x)} ${r1(y - r)}Q${r1(x + r * .18)} ${r1(y - r * .18)} ${r1(x + r)} ${r1(y)}Q${r1(x + r * .18)} ${r1(y + r * .18)} ${r1(x)} ${r1(y + r)}Q${r1(x - r * .18)} ${r1(y + r * .18)} ${r1(x - r)} ${r1(y)}Q${r1(x - r * .18)} ${r1(y - r * .18)} ${r1(x)} ${r1(y - r)}Z"/>`;
+const quatre = (x, y, r) => `<circle cx="${x}" cy="${y - r}" r="${r * .8}"/><circle cx="${x + r}" cy="${y}" r="${r * .8}"/><circle cx="${x}" cy="${y + r}" r="${r * .8}"/><circle cx="${x - r}" cy="${y}" r="${r * .8}"/>`;
+
+/* ---------- Hoa mai, hoa đào ---------- */
+function flowerDefs(P) {
+  const maiPetal = 'M0 0C-11-4-13.5-20-1.5-25.5Q0-26.2 1.5-25.5C13.5-20 11-4 0 0Z';
+  const daoPetal = 'M0 0C-13-4-16.5-19-6-25.5Q-2.5-27.5 0-23.6Q2.5-27.5 6-25.5C16.5-19 13-4 0 0Z';
+  const ring = (d, fill, stroke) => [0, 72, 144, 216, 288].map(a => `<path d="${d}" transform="rotate(${a})" fill="${fill}" stroke="${stroke}" stroke-width=".7"/>`).join('');
+  const stamens = (n, len, color, tip) => {
+    let s = '';
+    for (let i = 0; i < n; i++) {
+      const a = i / n * Math.PI * 2 + .2, l = len * (.72 + .28 * ((i * 7) % 3) / 2), x = r1(Math.cos(a) * l), y = r1(Math.sin(a) * l);
+      s += `<line x1="0" y1="0" x2="${x}" y2="${y}" stroke="${color}" stroke-width=".9"/><circle cx="${x}" cy="${y}" r="1.4" fill="${tip}"/>`;
+    }
+    return s;
+  };
+  const bud = (fill, stroke, sepal) => `<path d="M0 3C-6.5-1-6.5-10 0-14.5C6.5-10 6.5-1 0 3Z" fill="${fill}" stroke="${stroke}" stroke-width=".6"/><path d="M-5.6 1.5Q0 9 5.6 1.5Q0 4.5-5.6 1.5Z" fill="${sepal}"/>`;
+  return `
+  <radialGradient id="${P}maiG" cx="50%" cy="100%" r="105%"><stop offset="0" stop-color="#FFF0B0"/><stop offset=".45" stop-color="#FFD23F"/><stop offset="1" stop-color="#F6A800"/></radialGradient>
+  <radialGradient id="${P}daoG" cx="50%" cy="100%" r="110%"><stop offset="0" stop-color="#D93A72"/><stop offset=".42" stop-color="#F59AB9"/><stop offset="1" stop-color="#FFE6EF"/></radialGradient>
+  <g id="${P}maiF">${ring(maiPetal, `url(#${P}maiG)`, '#D98A00')}<circle r="4.6" fill="#F39C12"/>${stamens(14, 11, '#F7C948', '#C0392B')}</g>
+  <g id="${P}daoF">${ring(daoPetal, `url(#${P}daoG)`, '#E06A93')}<circle r="4.2" fill="#9E1747"/>${stamens(12, 9.5, '#FFD6E4', '#FFD54F')}</g>
+  <g id="${P}maiB">${bud('#FFCB2E', '#D98A00', '#8C2F12')}</g>
+  <g id="${P}daoB">${bud('#F07AA3', '#D44C7E', '#5B3A1E')}</g>
+  <path id="${P}maiP" d="${maiPetal}" fill="url(#${P}maiG)"/>
+  <path id="${P}daoP" d="${daoPetal}" fill="url(#${P}daoG)"/>`;
+}
+const TET_LIMBS = {
+  main: [[-40, 262], [86, 170], [252, 78], [478, 60]], w: [27, 6],
+  subs: [
+    [0, .28, [[52, 22], [112, 66], [170, 98]], 13, 3.4],
+    [0, .5, [[26, -36], [40, -76], [84, -110]], 10, 3],
+    [0, .72, [[44, 26], [96, 46], [164, 54]], 8.5, 2.6],
+    [1, .56, [[14, 26], [10, 50], [28, 72]], 6, 2],
+    [0, .9, [[30, -20], [52, -30], [80, -40]], 5.5, 1.8],
+    [2, .55, [[-28, -14], [-50, -30], [-58, -58]], 5, 1.8],
+    [3, .6, [[20, -18], [34, -32], [52, -40]], 4.5, 1.6],
+  ],
+  avoid: (x, y) => y > 300 && x > 100,
+};
+function branch(P, kind, rnd, spec) {
+  const limbs = [{ p: spec.main, w0: spec.w[0], w1: spec.w[1] }];
+  for (const [pi, t, rel, w0, w1] of spec.subs) { const s = bz(limbs[pi].p, t); limbs.push({ p: [s, ...rel.map(q => [s[0] + q[0], s[1] + q[1]])], w0, w1 }); }
+  let wood = '';
+  const blooms = [], buds = [];
+  limbs.forEach((L, i) => { wood += `<path d="${limbPath(L, i * 1.7)}"/>`; });
+  for (const L of limbs) {
+    const n = Math.max(1, Math.round(bzLen(L.p) / 40));
+    for (let i = 0; i < n; i++) {
+      const t = .12 + (i + .2 + rnd() * .6) / n * .86;
+      const [x, y] = bz(L.p, t), [tx, ty] = unit(bzTan(L.p, t)), side = i % 2 ? 1 : -1;
+      const off = (L.w0 + (L.w1 - L.w0) * t) / 2 + 2 + rnd() * 7;
+      const bx = x - ty * off * side, by = y + tx * off * side;
+      if (spec.avoid(bx, by)) continue;
+      if (rnd() < .2) buds.push([bx, by, deg(Math.atan2(ty, tx)) + 90 + side * 40, .9 + rnd() * .3]);
+      else blooms.push([bx, by, rnd() * 72, (L.w0 > 9 ? .74 : .6) + rnd() * .34, .6 + rnd() * .4]);
+    }
+    const [tx, ty] = unit(bzTan(L.p, 1));
+    buds.push([L.p[3][0] + tx * 5, L.p[3][1] + ty * 5, deg(Math.atan2(ty, tx)) + 90, 1]);
+  }
+  let s = `<g fill="#3A1C12">${wood}</g>`;
+  s += buds.map(([x, y, a, k]) => `<use href="#${P}${kind}B" transform="translate(${r1(x)} ${r1(y)}) rotate(${r1(a)}) scale(${r1(k)})"/>`).join('');
+  s += blooms.map(([x, y, a, k, tl]) => `<use href="#${P}${kind}F" transform="translate(${r1(x)} ${r1(y)}) rotate(${r1(a)}) scale(${r1(k)} ${r1(k * tl)})"/>`).join('');
+  return s;
+}
+function fallingPetals(P, kind, rnd, n) {
+  let s = '<g class="fx">';
+  for (let i = 0; i < n; i++) {
+    const x = 60 + rnd() * 680, dur = 10 + rnd() * 8, delay = -rnd() * dur, k = .5 + rnd() * .4;
+    s += `<g transform="translate(${r1(x)} 0)"><g class="fx-fall" style="animation-duration:${r1(dur)}s;animation-delay:${r1(delay)}s"><use href="#${P}${kind}P" transform="scale(${r1(k)}) rotate(${Math.round(rnd() * 360)})"/></g></g>`;
+  }
+  return s + '</g>';
+}
+function restingPetals(P, kind, rnd) {
+  let s = '';
+  for (let i = 0; i < 7; i++) {
+    const left = i % 2 === 0, x = left ? 44 + rnd() * 48 : 708 + rnd() * 48, y = 360 + rnd() * 400;
+    s += `<use href="#${P}${kind}P" transform="translate(${r1(x)} ${r1(y)}) rotate(${Math.round(rnd() * 360)}) scale(${r1(.5 + rnd() * .3)})" opacity=".9"/>`;
+  }
+  return s;
+}
+
+/* ---------- Đồ Tết ---------- */
+const frameGold = c => {
+  const dia = (x, y) => `<path d="M${x} ${y - 7}L${x + 7} ${y}L${x} ${y + 7}L${x - 7} ${y}Z" fill="${c}"/>`;
+  return `<rect x="22" y="22" width="756" height="956" rx="16" fill="none" stroke="${c}" stroke-width="2.4"/><rect x="31" y="31" width="738" height="938" rx="10" fill="none" stroke="${c}" stroke-opacity=".45" stroke-width="1"/>${dia(31, 31)}${dia(769, 31)}${dia(31, 969)}${dia(769, 969)}`;
+};
+const lanternDefs = P => `
+  <radialGradient id="${P}lanG" cx="38%" cy="40%" r="70%"><stop offset="0" stop-color="#FFF1B8"/><stop offset=".45" stop-color="#FFC94A"/><stop offset="1" stop-color="#E8830C"/></radialGradient>
+  <radialGradient id="${P}glow"><stop offset="0" stop-color="#FFD66B" stop-opacity=".5"/><stop offset="1" stop-color="#FFD66B" stop-opacity="0"/></radialGradient>`;
+function lantern(P, cx, cy, w, h, top) {
+  const rx = w / 2, ry = h / 2;
+  let s = `<line x1="${cx}" y1="${top}" x2="${cx}" y2="${cy - ry - 8}" stroke="#E9B44C" stroke-width="1.6"/>`;
+  s += `<circle cx="${cx}" cy="${cy}" r="${r1(w * 1.3)}" fill="url(#${P}glow)" class="fx-pulse"/>`;
+  s += `<ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}" fill="url(#${P}lanG)"/>`;
+  for (const k of [-.66, -.33, 0, .33, .66]) {
+    const xs = r1(cx + k * rx * .34), xm = r1(cx + k * rx * 1.32);
+    s += `<path d="M${xs} ${r1(cy - ry + 3)}Q${xm} ${cy} ${xs} ${r1(cy + ry - 3)}" fill="none" stroke="#C0650C" stroke-opacity=".5" stroke-width="1.3"/>`;
+  }
+  s += `<rect x="${r1(cx - rx * .42)}" y="${r1(cy - ry - 8)}" width="${r1(rx * .84)}" height="11" rx="3" fill="#5A2410"/><rect x="${r1(cx - rx * .42)}" y="${r1(cy + ry - 3)}" width="${r1(rx * .84)}" height="11" rx="3" fill="#5A2410"/>`;
+  const ty = cy + ry + 8;
+  s += `<circle cx="${cx}" cy="${ty + 3}" r="3.6" fill="#F4C451"/><g stroke="#F4C451" stroke-width="1.2">`;
+  for (let i = -4; i <= 4; i++) s += `<line x1="${cx}" y1="${ty + 5}" x2="${r1(cx + i * 1.7)}" y2="${ty + 40}"/>`;
+  return s + '</g>';
+}
+function banhChung(P, cx, cy) {
+  let veins = '';
+  for (let i = 0; i < 7; i++) { const x = -56 + i * 18; veins += `<path d="M${x} -56Q${x + 6} 0 ${x - 2} 54" fill="none"/>`; }
+  const strings = c => `<line x1="-24" y1="-59" x2="-24" y2="55"/><line x1="18" y1="-59" x2="18" y2="55"/><line x1="-63" y1="-20" x2="59" y2="-20"/><line x1="-63" y1="19" x2="59" y2="19"/>`;
+  return `<g transform="translate(${cx} ${cy}) rotate(-7)">
+    <ellipse cx="6" cy="68" rx="82" ry="12" fill="#2A0507" opacity=".45"/>
+    <rect x="-60" y="-50" width="124" height="116" rx="10" fill="#1F4D1D"/>
+    <rect x="-64" y="-60" width="124" height="116" rx="10" fill="url(#${P}leaf)"/>
+    <g stroke="#9CCB82" stroke-opacity=".3" stroke-width="1.6">${veins}</g>
+    <g stroke="#8A7440" stroke-width="7.5" stroke-linecap="round" opacity=".45" transform="translate(1.5 1.5)">${strings()}</g>
+    <g stroke="#EFDDA8" stroke-width="4.6" stroke-linecap="round">${strings()}</g>
+  </g>`;
+}
+function banhTet(P, cx, cy) {
+  let bands = '';
+  for (let i = 0; i < 7; i++) { const x = -78 + i * 24; bands += `<path d="M${x} -36L${x + 18} 36"/>`; }
+  return `<g transform="translate(${cx} ${cy}) rotate(-8)">
+    <ellipse cx="12" cy="44" rx="98" ry="12" fill="#2A0507" opacity=".45"/>
+    <clipPath id="${P}tetClip"><rect x="-82" y="-34" width="152" height="68" rx="30"/></clipPath>
+    <rect x="-82" y="-34" width="152" height="68" rx="30" fill="url(#${P}tetLeaf)"/>
+    <g clip-path="url(#${P}tetClip)" stroke="#EFDDA8" stroke-width="4" opacity=".92">${bands}</g>
+    <ellipse cx="60" cy="0" rx="12" ry="33" fill="#2F6A2A"/>
+    <g transform="translate(76 30)"><circle r="31" fill="#3B7A35"/><circle r="26" fill="#F7F1DE"/><circle r="14" fill="#E8B84A"/><circle r="6" fill="#E59A86"/></g>
+  </g>`;
+}
+function miniFlower(x, y, r, fill) {
+  let s = '';
+  for (let i = 0; i < 5; i++) { const a = -Math.PI / 2 + i * Math.PI * 2 / 5; s += `<circle cx="${r1(x + Math.cos(a) * r * .55)}" cy="${r1(y + Math.sin(a) * r * .55)}" r="${r1(r * .45)}"/>`; }
+  return `<g fill="${fill}">${s}<circle cx="${x}" cy="${y}" r="${r1(r * .3)}" opacity=".6"/></g>`;
+}
+function liXi(cx, cy) {
+  const env = (fill, trim, emb, embFill) => `<rect x="-40" y="-58" width="80" height="116" rx="7" fill="${fill}" stroke="${trim}" stroke-width="2.6"/><path d="M-40 -46L0 -18L40 -46" fill="none" stroke="${trim}" stroke-width="2"/><circle cx="0" cy="14" r="17" fill="${emb}"/>${miniFlower(0, 14, 10, embFill)}`;
+  return `<g transform="translate(${cx} ${cy})"><ellipse cx="6" cy="66" rx="72" ry="11" fill="#2A0507" opacity=".45"/>
+    <g transform="rotate(-13) translate(-22 0)">${env('#E23C3C', '#F5C451', '#F5C451', '#E23C3C')}</g>
+    <g transform="rotate(9) translate(26 6)">${env('#F2BE45', '#B8282A', '#C62828', '#F8D77A')}</g></g>`;
+}
+function drawTet(m, P, rnd) {
+  const kind = m.mien === 'nam' ? 'mai' : 'dao';
+  const defs = `
+  <radialGradient id="${P}bg" cx="50%" cy="44%" r="78%"><stop offset="0" stop-color="#C8232A"/><stop offset=".6" stop-color="#A1161C"/><stop offset="1" stop-color="#690A0F"/></radialGradient>
+  <pattern id="${P}pat" width="72" height="72" patternUnits="userSpaceOnUse"><g fill="#F5C76A" opacity=".08">${quatre(18, 18, 4)}${quatre(54, 54, 4)}</g></pattern>
+  <linearGradient id="${P}leaf" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5B9E4E"/><stop offset="1" stop-color="#2E6A2B"/></linearGradient>
+  <linearGradient id="${P}tetLeaf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6FAE5C"/><stop offset=".55" stop-color="#3E7E37"/><stop offset="1" stop-color="#245321"/></linearGradient>
+  ${grainDefs(P)}${flowerDefs(P)}${lanternDefs(P)}`;
+  let back = `<rect width="800" height="1000" fill="url(#${P}bg)"/><rect width="800" height="1000" fill="url(#${P}pat)"/>${grainRect(P, .12)}`;
+  back += frameGold('#E9B44C');
+  back += lantern(P, 632, 148, 78, 100, 22) + lantern(P, 724, 98, 58, 76, 22);
+  back += branch(P, kind, rnd, TET_LIMBS);
+  back += restingPetals(P, kind, rnd);
+  back += m.mien === 'nam' ? banhTet(P, 128, 910) : banhChung(P, 126, 902);
+  back += liXi(670, 902);
+  return { defs, back, fx: fallingPetals(P, kind, rnd, 9) };
+}
+
+/* ---------- Trung Thu ---------- */
+function starLantern(P, cx, cy, R, rot, stick) {
+  const pts = [];
+  for (let i = 0; i < 10; i++) { const a = (-90 + i * 36 + rot) * Math.PI / 180, r = i % 2 ? R * .43 : R; pts.push([cx + Math.cos(a) * r, cy + Math.sin(a) * r]); }
+  const O = pts.filter((_, i) => i % 2 === 0), pp = q => r1(q[0]) + ',' + r1(q[1]);
+  const tassel = q => ['#FFD54F', '#81C784', '#F48FB1'].map((c, j) => `<path d="M${r1(q[0])} ${r1(q[1])}q${(j - 1) * 5 + 4} ${r1(R * .26)} ${(j - 1) * 5} ${r1(R * .52)}" fill="none" stroke="${c}" stroke-width="${r1(R * .045 + 1)}" stroke-linecap="round"/>`).join('');
+  let s = `<circle cx="${r1(cx)}" cy="${r1(cy)}" r="${r1(R * 1.75)}" fill="url(#${P}rglow)" class="fx-pulse"/>`;
+  if (stick) s += `<path d="M${r1(cx + 6)} ${r1(cy + R * .25)}L${r1(cx + 92)} 1012" stroke="#C8A062" stroke-width="6.5" stroke-linecap="round"/>`;
+  s += tassel(O[2]) + tassel(O[3]);
+  s += `<polygon points="${pts.map(pp).join(' ')}" fill="url(#${P}star)" fill-opacity=".96" stroke="#FFE3A3" stroke-width="${r1(R * .03 + 1)}" stroke-linejoin="round"/>`;
+  s += `<polyline points="${[0, 2, 4, 1, 3, 0].map(i => pp(O[i])).join(' ')}" fill="none" stroke="#FFE3A3" stroke-opacity=".7" stroke-width="${r1(R * .018 + .8)}"/>`;
+  s += `<circle cx="${r1(cx)}" cy="${r1(cy)}" r="${r1(R * .15)}" fill="#FFF4C8" opacity=".9"/>`;
+  return s;
+}
+function carp(P, cx, cy, s, rot) {
+  let sc = '';
+  for (const yy of [-9, 2, 13]) for (let xx = -26; xx <= 26; xx += 11) sc += `<path d="M${xx - 5} ${yy}a5.5 5.5 0 0 1 11 0"/>`;
+  return `<g transform="translate(${cx} ${cy}) rotate(${rot}) scale(${s})">
+    <circle r="88" fill="url(#${P}rglow)" class="fx-pulse"/>
+    <path d="M-48 0C-64-18-82-30-94-26C-82-10-82 10-94 26C-82 30-64 18-48 0Z" fill="#FFD27A" stroke="#E9452B" stroke-width="1.5"/>
+    <path d="M-20-26Q2-48 24-27Z" fill="#FFD27A" stroke="#E9452B" stroke-width="1.2"/>
+    <path d="M-52 0C-42-28 18-36 50-10C60-3 60 4 50 10C18 36-42 28-52 0Z" fill="url(#${P}carp)" stroke="#C93A22" stroke-width="1.5"/>
+    <g fill="none" stroke="#FFE6C2" stroke-opacity=".7" stroke-width="1.3">${sc}</g>
+    <path d="M30-18Q38 0 30 18" fill="none" stroke="#C93A22" stroke-width="1.6"/>
+    <circle cx="42" cy="-6" r="5.2" fill="#FFF"/><circle cx="43" cy="-6" r="2.6" fill="#1F1A17"/>
+    <path d="M55 4q6 6 12 2" fill="none" stroke="#C93A22" stroke-width="1.6"/>
+    <path d="M54 8q-4 14 6 22" fill="none" stroke="#FFD27A" stroke-width="1.4"/>
+    <path d="M-6 22Q2 38 14 28Z" fill="#FFD27A" stroke="#E9452B" stroke-width="1"/>
+  </g>`;
+}
+function mooncake(P, cx, cy, r) {
+  const n = 18;
+  let d = `M${r1(cx + r * .93)} ${r1(cy)}`;
+  for (let i = 1; i <= n; i++) {
+    const a = i / n * Math.PI * 2, am = (i - .5) / n * Math.PI * 2;
+    d += `Q${r1(cx + Math.cos(am) * r * 1.08)} ${r1(cy + Math.sin(am) * r * 1.08)} ${r1(cx + Math.cos(a) * r * .93)} ${r1(cy + Math.sin(a) * r * .93)}`;
+  }
+  let pet = '';
+  for (let i = 0; i < 8; i++) pet += `<ellipse cx="${r1(cx)}" cy="${r1(cy - r * .36)}" rx="${r1(r * .1)}" ry="${r1(r * .2)}" transform="rotate(${i * 45} ${r1(cx)} ${r1(cy)})"/>`;
+  return `<ellipse cx="${r1(cx + 4)}" cy="${r1(cy + r * .92)}" rx="${r1(r * 1.02)}" ry="${r1(r * .18)}" fill="#05060F" opacity=".35"/>
+    <path d="${d}Z" fill="url(#${P}cake)" stroke="#8E561D" stroke-width="1.5"/>
+    <circle cx="${r1(cx)}" cy="${r1(cy)}" r="${r1(r * .66)}" fill="#D59A52" stroke="#93591F" stroke-width="2"/>
+    <g fill="none" stroke="#93591F" stroke-width="1.6" opacity=".75">${pet}</g>
+    <circle cx="${r1(cx)}" cy="${r1(cy)}" r="${r1(r * .12)}" fill="#A86A2A"/>
+    <ellipse cx="${r1(cx - r * .32)}" cy="${r1(cy - r * .36)}" rx="${r1(r * .32)}" ry="${r1(r * .14)}" fill="#FFF" opacity=".16" transform="rotate(-25 ${r1(cx - r * .32)} ${r1(cy - r * .36)})"/>`;
+}
+function moonDetails(P) {
+  const circles = list => list.map(([x, y, r]) => `<circle cx="${x}" cy="${y}" r="${r}"/>`).join('');
+  return `<g clip-path="url(#${P}moonClip)">
+    <g fill="#E9C16C" opacity=".28">${circles([[452, 158, 16], [474, 214, 9], [436, 250, 12], [370, 140, 10], [500, 178, 6]])}</g>
+    <g fill="#CF9B45" opacity=".5">${circles([[322, 238, 22], [346, 224, 27], [374, 230, 25], [397, 242, 18], [334, 254, 19], [361, 255, 21], [305, 250, 14], [388, 258, 15]])}
+      <path d="M350 256C349 282 345 302 334 330L380 330C368 302 364 282 364 256Z"/>
+      <path d="M262 334Q330 316 420 326Q470 330 540 340L540 360L262 360Z"/>
+      <circle cx="404" cy="303" r="4.6"/><path d="M397 324Q399 309 404 309Q410 309 412 324Z"/>
+    </g>
+    <g stroke="#CF9B45" stroke-opacity=".5" stroke-width="1.6" fill="none"><path d="M318 258L316 296"/><path d="M330 266Q331 286 328 304"/><path d="M386 266Q388 284 386 300"/></g>
+  </g>`;
+}
+function drawTrungThu(m, P, rnd) {
+  const defs = `
+  <linearGradient id="${P}sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0A1430"/><stop offset=".55" stop-color="#17275A"/><stop offset="1" stop-color="#2A2358"/></linearGradient>
+  <radialGradient id="${P}mglow"><stop offset="0" stop-color="#FFE9A8" stop-opacity=".55"/><stop offset=".45" stop-color="#FFD27A" stop-opacity=".16"/><stop offset="1" stop-color="#FFD27A" stop-opacity="0"/></radialGradient>
+  <radialGradient id="${P}moon" cx="42%" cy="38%" r="70%"><stop offset="0" stop-color="#FFF8DE"/><stop offset=".7" stop-color="#FCE3A2"/><stop offset="1" stop-color="#F1C76A"/></radialGradient>
+  <clipPath id="${P}moonClip"><circle cx="400" cy="205" r="128"/></clipPath>
+  <radialGradient id="${P}star" cx="50%" cy="50%" r="55%"><stop offset="0" stop-color="#FFC2A6"/><stop offset=".45" stop-color="#F0533F"/><stop offset="1" stop-color="#B5231B"/></radialGradient>
+  <radialGradient id="${P}rglow"><stop offset="0" stop-color="#FF7A50" stop-opacity=".45"/><stop offset="1" stop-color="#FF7A50" stop-opacity="0"/></radialGradient>
+  <linearGradient id="${P}carp" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFB25C"/><stop offset="1" stop-color="#E9452B"/></linearGradient>
+  <radialGradient id="${P}cake" cx="45%" cy="40%" r="65%"><stop offset="0" stop-color="#EDC07A"/><stop offset="1" stop-color="#B9772F"/></radialGradient>
+  ${grainDefs(P)}`;
+  let back = `<rect width="800" height="1000" fill="url(#${P}sky)"/>`;
+  let stars = '', twinkle = '';
+  for (let i = 0; i < 80; i++) {
+    const x = 24 + rnd() * 752, y = 24 + rnd() * 580;
+    if (Math.hypot(x - 400, y - 205) < 172) continue;
+    if (y > 362 && x > 105 && x < 695) continue;
+    stars += `<circle cx="${r1(x)}" cy="${r1(y)}" r="${r1(.6 + rnd() * 1.4)}" opacity="${r1(.35 + rnd() * .6)}"/>`;
+  }
+  const sp = [[96, 300], [700, 268], [250, 70], [560, 52], [742, 420], [52, 470], [610, 330]];
+  sp.forEach(([x, y], i) => { twinkle += `<g class="fx-tw" style="animation-delay:${r1(-i * .55)}s">${sparkle(x, y, 5 + (i % 3) * 2)}</g>`; });
+  back += `<g fill="#FFF6DD">${stars}${twinkle}</g>`;
+  back += `<circle cx="400" cy="205" r="275" fill="url(#${P}mglow)"/><circle cx="400" cy="205" r="128" fill="url(#${P}moon)"/>`;
+  back += moonDetails(P);
+  back += `<g fill="#C9D3F2" opacity=".16"><ellipse cx="320" cy="300" rx="96" ry="13"/><ellipse cx="392" cy="290" rx="62" ry="15"/><ellipse cx="478" cy="308" rx="84" ry="11"/><ellipse cx="530" cy="146" rx="70" ry="8"/></g>`;
+  back += `<line x1="118" y1="22" x2="118" y2="140" stroke="#F7C964" stroke-opacity=".7" stroke-width="1.4"/>` + carp(P, 118, 178, 1, -10);
+  back += `<line x1="690" y1="22" x2="690" y2="94" stroke="#F7C964" stroke-opacity=".7" stroke-width="1.4"/>` + starLantern(P, 690, 138, 44, 0, false);
+  back += `<ellipse cx="680" cy="968" rx="128" ry="20" fill="#E8DCC8" opacity=".12"/>` + mooncake(P, 646, 876, 54) + mooncake(P, 712, 922, 60);
+  back += starLantern(P, 150, 860, 86, -14, true);
+  back += grainRect(P, .08);
+  return { defs, back, fx: '' };
+}
+
+/* ---------- Mừng thọ ---------- */
+function cloudMotif(x, y, s, flip) {
+  return `<g transform="translate(${x} ${y}) scale(${flip ? -s : s} ${s})" fill="#F3DFAE" fill-opacity=".55" stroke="#C99A3E" stroke-width="2" stroke-linejoin="round">
+    <path d="M0 22C-2 8 12 0 24 6C28-8 50-10 58 2C66-6 84-2 84 12C96 12 104 22 98 32L4 32C-4 32-6 26 0 22Z"/>
+    <path d="M24 22c0-7 9-7 9 0c0 4-5 4-5 1M54 18c0-7 9-7 9 0c0 4-5 4-5 1" fill="none"/></g>`;
+}
+function peachCluster(P, x, y, flip) {
+  const leaf = (lx, ly, a, len) => `<g transform="translate(${lx} ${ly}) rotate(${a})"><path d="M0 0C${len * .3} ${-len * .22} ${len * .75} ${-len * .2} ${len} 0C${len * .75} ${len * .2} ${len * .3} ${len * .22} 0 0Z" fill="url(#${P}pleaf)"/><path d="M3 0L${len - 6} 0" stroke="#3E6A2C" stroke-width="1.4"/></g>`;
+  const peach = (px, py, r) => `<g transform="translate(${px} ${py})"><path d="M0 ${-r * 1.12}C${r * .55} ${-r * 1.05} ${r * 1.02} ${-r * .55} ${r * .98} ${r * .08}C${r * .95} ${r * .7} ${r * .5} ${r} 0 ${r}C${-r * .5} ${r} ${-r * .95} ${r * .7} ${-r * .98} ${r * .08}C${-r * 1.02} ${-r * .55} ${-r * .55} ${-r * 1.05} 0 ${-r * 1.12}Z" fill="url(#${P}peach)" stroke="#D4544F" stroke-opacity=".4"/><path d="M0 ${-r * 1.1}C${-r * .35} ${-r * .5} ${-r * .4} ${r * .2} ${-r * .1} ${r * .9}" fill="none" stroke="#D84B4B" stroke-opacity=".45" stroke-width="2"/><ellipse cx="${-r * .42}" cy="${-r * .3}" rx="${r * .22}" ry="${r * .34}" fill="#FFF" opacity=".3" transform="rotate(20 ${-r * .42} ${-r * .3})"/></g>`;
+  return `<ellipse cx="${x + (flip ? -22 : 22)}" cy="${y + 50}" rx="86" ry="11" fill="#8C6A3E" opacity=".16"/>
+    <g transform="translate(${x} ${y}) scale(${flip ? -1 : 1} 1)">${leaf(-6, -30, -150, 70)}${leaf(4, -34, -40, 64)}${leaf(-20, -10, 160, 52)}${peach(0, 0, 42)}${peach(52, 22, 32)}</g>`;
+}
+function drawTho(m, P, rnd) {
+  const defs = `
+  <radialGradient id="${P}paper" cx="50%" cy="42%" r="80%"><stop offset="0" stop-color="#FBF5E6"/><stop offset=".7" stop-color="#F3E8D0"/><stop offset="1" stop-color="#E6D4B1"/></radialGradient>
+  <filter id="${P}fiber" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".012 .09" numOctaves="3" seed="4"/><feColorMatrix values="0 0 0 0 .45 0 0 0 0 .33 0 0 0 0 .2 1.8 0 0 0 -.9"/></filter>
+  <filter id="${P}stamp" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency="1.2" numOctaves="1" seed="9"/><feDisplacementMap in="SourceGraphic" scale="3.2"/></filter>
+  <linearGradient id="${P}peach" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EE5A5A"/><stop offset=".45" stop-color="#F9A27C"/><stop offset="1" stop-color="#FFE9B5"/></linearGradient>
+  <linearGradient id="${P}pleaf" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7FAE57"/><stop offset="1" stop-color="#4A7A35"/></linearGradient>
+  <linearGradient id="${P}strip" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9E1F18"/><stop offset=".5" stop-color="#BF2B21"/><stop offset="1" stop-color="#9E1F18"/></linearGradient>
+  ${grainDefs(P)}`;
+  const red = '#A8231C';
+  const key = (x, y, sx, sy) => `<path transform="translate(${x} ${y}) scale(${sx} ${sy})" d="M0 34V0H34V26H8V8H26V18H16" fill="none" stroke="${red}" stroke-width="2.4"/>`;
+  const strip = x => `<rect x="${x - 4}" y="141" width="98" height="11" rx="5.5" fill="#5C3218"/><rect x="${x}" y="150" width="90" height="540" rx="4" fill="url(#${P}strip)"/><rect x="${x + 6}" y="158" width="78" height="524" rx="2" fill="none" stroke="#E7B65A" stroke-width="1.4"/><path d="M${x + 45} 172l6 6-6 6-6-6Z M${x + 45} 656l6 6-6 6-6-6Z" fill="#E7B65A"/><rect x="${x - 4}" y="688" width="98" height="11" rx="5.5" fill="#5C3218"/>`;
+  let back = `<rect width="800" height="1000" fill="url(#${P}paper)"/><rect width="800" height="1000" filter="url(#${P}fiber)" opacity=".22"/>${grainRect(P, .1)}`;
+  back += `<rect x="24" y="24" width="752" height="952" rx="6" fill="none" stroke="${red}" stroke-width="2.6"/><rect x="34" y="34" width="732" height="932" rx="3" fill="none" stroke="${red}" stroke-opacity=".5" stroke-width="1"/>`;
+  back += key(42, 42, 1, 1) + key(758, 42, -1, 1) + key(42, 958, 1, -1) + key(758, 958, -1, -1);
+  back += strip(46) + strip(664);
+  back += cloudMotif(150, 150, .9, false) + cloudMotif(640, 160, .78, true);
+  back += `<g filter="url(#${P}stamp)"><rect x="568" y="274" width="66" height="66" rx="6" fill="#C0281C"/><rect x="574" y="280" width="54" height="54" rx="3" fill="none" stroke="#F4D9C2" stroke-opacity=".55" stroke-width="1.5"/></g>`;
+  back += peachCluster(P, 120, 900, false) + peachCluster(P, 680, 902, true);
+  return { defs, back, fx: '' };
+}
+
+/* ---------- Thôi nôi & bé ---------- */
+const ITEMS = {
+  sach: () => `<path d="M-33-12L-33 24Q-15 16 0 25Q15 16 33 24L33-12" fill="#E8615A"/><path d="M-30-16Q-15-24 0-15L0 22Q-15 13-30 20Z" fill="#fff" stroke="#3D6FA8" stroke-width="2.2" stroke-linejoin="round"/><path d="M30-16Q15-24 0-15L0 22Q15 13 30 20Z" fill="#fff" stroke="#3D6FA8" stroke-width="2.2" stroke-linejoin="round"/><g stroke="#9DB6D3" stroke-width="1.6"><path d="M-24-8L-6-6M-24 0L-6 2M-24 8L-10 9M6-6L24-8M6 2L24 0M10 9L24 8"/></g>`,
+  but: () => `<g transform="rotate(-38)"><rect x="-30" y="-6" width="48" height="12" fill="#FFC93C"/><rect x="-30" y="-6" width="48" height="4" fill="#FFE07A"/><path d="M18-6L32 0L18 6Z" fill="#F3D9B1"/><path d="M27.5-2L32 0L27.5 2Z" fill="#3B3B3B"/><rect x="-38" y="-6" width="8" height="12" rx="2" fill="#F48FB1"/><rect x="-31" y="-6" width="3" height="12" fill="#B0BEC5"/></g>`,
+  keo: () => `<path d="M-3 2L8-33L4-1Z" fill="#DCE4E8" stroke="#78909C" stroke-width="1.4"/><path d="M3 2L-8-33L-4-1Z" fill="#C5D0D6" stroke="#78909C" stroke-width="1.4"/><path d="M-2 2L-10 12M2 2L10 12" stroke="#E8615A" stroke-width="5"/><circle cx="-13" cy="19" r="8.5" fill="none" stroke="#E8615A" stroke-width="5"/><circle cx="13" cy="19" r="8.5" fill="none" stroke="#E8615A" stroke-width="5"/><circle cx="0" cy="0" r="2.6" fill="#607D8B"/>`,
+  ongnghe: () => `<path d="M-14-28Q-18-4 0 4Q18-4 14-28" fill="none" stroke="#4DB6AC" stroke-width="4.5" stroke-linecap="round"/><path d="M0 4Q2 22 15 24" fill="none" stroke="#4DB6AC" stroke-width="4.5" stroke-linecap="round"/><circle cx="-14" cy="-30" r="3.6" fill="#455A64"/><circle cx="14" cy="-30" r="3.6" fill="#455A64"/><circle cx="20" cy="24" r="9" fill="#CFD8DC" stroke="#607D8B" stroke-width="2.5"/><circle cx="20" cy="24" r="3.5" fill="#90A4AE"/>`,
+  tien: () => [[-9, 5], [10, -7]].map(([x, y]) => `<circle cx="${x}" cy="${y}" r="20" fill="#F6C343" stroke="#C99212" stroke-width="2.5"/><circle cx="${x}" cy="${y}" r="14" fill="none" stroke="#E0A92A" stroke-width="1.5"/><rect x="${x - 5.5}" y="${y - 5.5}" width="11" height="11" fill="#E6C690" stroke="#C99212" stroke-width="2"/>`).join(''),
+  guong: () => `<rect x="-4.5" y="10" width="9" height="28" rx="4.5" fill="#F48FB1"/><circle cx="0" cy="-8" r="22" fill="#F48FB1"/><circle cx="0" cy="-8" r="16.5" fill="#D6ECF8"/><path d="M-9-16Q-4-21 3-20" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/>`,
+  maytinh: () => { let k = ''; for (let r = 0; r < 3; r++) for (let c = 0; c < 3; c++) k += `<circle cx="${-12 + c * 12}" cy="${-1 + r * 10}" r="4" fill="#E8EAF6"/>`; return `<rect x="-20" y="-28" width="40" height="56" rx="7" fill="#5C6BC0"/><rect x="-14" y="-22" width="28" height="12" rx="2" fill="#C5E1A5"/>${k}`; },
+  chongchong: () => `<line x1="0" y1="0" x2="0" y2="44" stroke="#B08950" stroke-width="4" stroke-linecap="round"/>` + ['#F28B82', '#FDD663', '#81C995', '#8AB4F8'].map((c, i) => `<path d="M0 0L0-27Q16-24 20-8Z" fill="${c}" transform="rotate(${i * 90})"/>`).join('') + `<circle r="3.6" fill="#fff" stroke="#9C7B5B" stroke-width="1.5"/>`,
+  trongboi: () => `<line x1="0" y1="18" x2="0" y2="48" stroke="#B08950" stroke-width="5" stroke-linecap="round"/><path d="M-19 0Q-30 3-32 11M19 0Q30 3 32 11" stroke="#5A4636" stroke-width="1.5" fill="none"/><circle cx="-32" cy="13" r="4.2" fill="#3D5A80"/><circle cx="32" cy="13" r="4.2" fill="#3D5A80"/><circle r="19" fill="#FFF3D6" stroke="#E8615A" stroke-width="6"/><circle r="7" fill="#FDD663"/>`,
+  ongsao: () => { const p = []; for (let i = 0; i < 10; i++) { const a = (-90 + i * 36) * Math.PI / 180, r = i % 2 ? 10 : 24; p.push(r1(Math.cos(a) * r) + ',' + r1(Math.sin(a) * r)); } return `<line x1="4" y1="6" x2="20" y2="46" stroke="#B08950" stroke-width="3.5" stroke-linecap="round"/><polygon points="${p.join(' ')}" fill="#EF4B3C" stroke="#FFD27A" stroke-width="2" stroke-linejoin="round"/><circle r="4" fill="#FFF4C8"/>`; },
+  conquay: () => `<rect x="-3" y="-30" width="6" height="12" rx="2" fill="#B08950"/><path d="M-22-10Q0-24 22-10L4 26Q0 32-4 26Z" fill="#81C995"/><path d="M-20-8Q0-18 20-8L17-2Q0-11-17-2Z" fill="#FDD663"/><path d="M-12 6Q0 0 12 6L9 12Q0 7-9 12Z" fill="#F28B82"/>`,
+  bong: () => `<circle r="23" fill="#fff" stroke="#E8615A" stroke-width="2"/><path d="M0-23Q-14 0 0 23Q-31 18-22-6Q-16-19 0-23Z" fill="#8AB4F8"/><path d="M0-23Q14 0 0 23Q31 18 22-6Q16-19 0-23Z" fill="#FDD663"/><circle cx="-8" cy="-11" r="4" fill="#fff" opacity=".7"/>`,
+  dieu: () => `<path d="M0-30L22 0L0 34L-22 0Z" fill="#8AB4F8" stroke="#3D6FA8" stroke-width="1.5"/><path d="M0-30L0 34M-22 0L22 0" stroke="#3D6FA8" stroke-width="1.4"/><path d="M0 34Q8 44 0 52Q-8 60 2 66" fill="none" stroke="#5A4636" stroke-width="1.5"/><path d="M-5 44L5 40L3 48Z M-4 56L6 54L1 62Z" fill="#F28B82"/>`,
+  bi: () => `<circle cx="-12" cy="6" r="9" fill="#8AB4F8"/><circle cx="8" cy="10" r="9" fill="#F28B82"/><circle cx="-2" cy="-9" r="9" fill="#81C995"/><g fill="#fff" opacity=".7"><circle cx="-15" cy="3" r="2.4"/><circle cx="5" cy="7" r="2.4"/><circle cx="-5" cy="-12" r="2.4"/></g>`,
+};
+function bunting() {
+  const p0 = [-10, 24], c = [400, 120], p2 = [810, 24];
+  const q = t => [(1 - t) * (1 - t) * p0[0] + 2 * (1 - t) * t * c[0] + t * t * p2[0], (1 - t) * (1 - t) * p0[1] + 2 * (1 - t) * t * c[1] + t * t * p2[1]];
+  const cols = ['#F28B82', '#FDD663', '#81C995', '#8AB4F8', '#F6AEA9', '#C3A6F7'];
+  let s = `<path d="M${p0}Q${c} ${p2}" fill="none" stroke="#9C7B5B" stroke-width="2"/>`;
+  const n = 15;
+  for (let i = 0; i < n; i++) {
+    const t = (i + .5) / n, a = q(t - .02), b = q(t + .02), mid = q(t), [tx, ty] = unit([b[0] - a[0], b[1] - a[1]]);
+    const L = [mid[0] - tx * 22, mid[1] - ty * 22], R = [mid[0] + tx * 22, mid[1] + ty * 22], T = [mid[0] - ty * 50, mid[1] + tx * 50];
+    s += `<path class="fx-sway" style="animation-delay:${r1(-i * .37)}s" d="M${r1(L[0])} ${r1(L[1])}L${r1(R[0])} ${r1(R[1])}L${r1(T[0])} ${r1(T[1])}Z" fill="${cols[i % cols.length]}"/>`;
+  }
+  return s;
+}
+function drawBe(m, P, rnd) {
+  const defs = `<filter id="${P}blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="34"/></filter>
+  <radialGradient id="${P}ros" cx="50%" cy="40%" r="60%"><stop offset="0" stop-color="#FFA36C"/><stop offset="1" stop-color="#F27A45"/></radialGradient>${grainDefs(P)}`;
+  let back = `<rect width="800" height="1000" fill="#FFF7EA"/><g filter="url(#${P}blur)" opacity=".8"><circle cx="90" cy="390" r="150" fill="#BFEBDD"/><circle cx="720" cy="300" r="160" fill="#FFD2BE"/><circle cx="690" cy="700" r="140" fill="#FFE9A6"/><circle cx="110" cy="730" r="130" fill="#CFE3FF"/></g>${grainRect(P, .08)}`;
+  back += bunting();
+  const cx = 400, cy = 222, R = 92, n = 26;
+  let d = `M${r1(cx + R * .92)} ${cy}`;
+  for (let i = 1; i <= n; i++) { const a = i / n * Math.PI * 2, am = (i - .5) / n * Math.PI * 2; d += `Q${r1(cx + Math.cos(am) * R * 1.07)} ${r1(cy + Math.sin(am) * R * 1.07)} ${r1(cx + Math.cos(a) * R * .92)} ${r1(cy + Math.sin(a) * R * .92)}`; }
+  back += `<path d="${d}Z" fill="#FFC857"/><circle cx="${cx}" cy="${cy}" r="${R * .78}" fill="url(#${P}ros)"/><circle cx="${cx}" cy="${cy}" r="${R * .7}" fill="none" stroke="#FFF3E0" stroke-width="2" stroke-dasharray="5 6"/>`;
+  if (!(m.showAge && m.age != null)) back += `<g fill="#FFF8EE">${sparkle(cx, cy, 34)}</g>`;
+  back += `<g fill="#FFC857">${sparkle(276, 168, 11)}${sparkle(520, 300, 9)}</g><g fill="#F6AEA9">${sparkle(530, 150, 8)}${sparkle(288, 298, 7)}</g>`;
+  const mx = 400, my = 1100, MR = 278;
+  let rings = '';
+  for (let r = MR - 24, i = 0; r > 40; r -= 9, i++) rings += `<circle cx="${mx}" cy="${my}" r="${r}" stroke="${i % 2 ? '#CFA866' : '#F2DCAA'}"/>`;
+  back += `<circle cx="${mx}" cy="${my}" r="${MR + 7}" fill="#7A5A33" opacity=".12"/><circle cx="${mx}" cy="${my}" r="${MR}" fill="#E6C690"/><g fill="none" stroke-width="3.2">${rings}</g><circle cx="${mx}" cy="${my}" r="${MR - 9}" fill="none" stroke="#A57A3E" stroke-width="17"/><circle cx="${mx}" cy="${my}" r="${MR - 9}" fill="none" stroke="#C99A58" stroke-width="5" stroke-dasharray="13 7"/>`;
+  const set = m.isThoiNoi || m.age === 1 ? ['sach', 'tien', 'ongnghe', 'but', 'guong', 'maytinh', 'keo'] : ['chongchong', 'trongboi', 'ongsao', 'bong', 'conquay', 'dieu', 'bi'];
+  const pos = [[272, 902], [400, 892], [528, 902], [212, 962], [337, 960], [463, 960], [588, 962]];
+  set.forEach((k, i) => { back += `<g transform="translate(${pos[i][0]} ${pos[i][1]}) rotate(${Math.round((rnd() - .5) * 26)}) scale(1.08)">${ITEMS[k]()}</g>`; });
+  return { defs, back, fx: '' };
+}
+
+/* ---------- Hoa sen & trống đồng ---------- */
+function dongSon(cx, cy, R, c, op) {
+  let s = `<g opacity="${op}" fill="none" stroke="${c}">`;
+  const pts = [];
+  for (let i = 0; i < 28; i++) { const a = -Math.PI / 2 + i * Math.PI / 14, r = i % 2 ? R * .075 : R * .21; pts.push(r1(cx + Math.cos(a) * r) + ',' + r1(cy + Math.sin(a) * r)); }
+  s += `<polygon points="${pts.join(' ')}" fill="${c}" stroke="none"/>`;
+  const ring = f => `<circle cx="${cx}" cy="${cy}" r="${r1(R * f)}" stroke-width="1.6"/>`;
+  s += ring(.25) + ring(.28);
+  for (let i = 0; i < 30; i++) { const a = i / 30 * Math.PI * 2, x = r1(cx + Math.cos(a) * R * .325), y = r1(cy + Math.sin(a) * R * .325); s += `<circle cx="${x}" cy="${y}" r="${r1(R * .022)}" stroke-width="1.2"/><circle cx="${x}" cy="${y}" r="1" fill="${c}"/>`; }
+  s += ring(.37) + ring(.4);
+  let ticks = '';
+  for (let i = 0; i < 110; i++) { const a = i / 110 * Math.PI * 2; ticks += `M${r1(cx + Math.cos(a) * R * .41)} ${r1(cy + Math.sin(a) * R * .41)}L${r1(cx + Math.cos(a) * R * .49)} ${r1(cy + Math.sin(a) * R * .49)}`; }
+  s += `<path d="${ticks}" stroke-width="1.1"/>` + ring(.5) + ring(.53);
+  const bird = `<path d="M-14 0C-8-3 2-4 8-2L20-3L9 0L20 2L8 2C2 4-8 3-14 0ZM-2-2L-9-12L-12-11L-5-1ZM-14 0L-25-5M-14 0L-26 0M-14 0L-25 5M5-3L0-10" stroke-width="1.2" fill="${c}"/>`;
+  for (let i = 0; i < 10; i++) { const a = i * 36, rad = a * Math.PI / 180; s += `<g transform="translate(${r1(cx + Math.cos(rad) * R * .655)} ${r1(cy + Math.sin(rad) * R * .655)}) rotate(${a - 90}) scale(${r1(R / 180)})">${bird}</g>`; }
+  s += ring(.78) + ring(.81);
+  let zz = '';
+  for (let i = 0; i <= 128; i++) { const a = i / 128 * Math.PI * 2, r = i % 2 ? R * .93 : R * .82; zz += (i ? 'L' : 'M') + r1(cx + Math.cos(a) * r) + ' ' + r1(cy + Math.sin(a) * r); }
+  s += `<path d="${zz}" stroke-width="1.1"/>` + ring(.95) + ring(.98);
+  return s + '</g>';
+}
+function lotus(P, cx, cy, s) {
+  const petal = (a, k, g, dy) => `<path d="M0 0C-24-16-30-60 0-98C30-60 24-16 0 0Z" transform="translate(${cx} ${r1(cy + (dy || 0))}) rotate(${a}) scale(${r1(k * s * 100) / 100})" fill="url(#${P}${g})" stroke="#D45A7E" stroke-opacity=".3" stroke-width="1"/>`;
+  let p = '';
+  [-78, -52, -25, 25, 52, 78].forEach(a => { p += petal(a, .9, 'lpA'); });
+  [-38, -12, 12, 38].forEach(a => { p += petal(a, .95, 'lpB'); });
+  p += `<ellipse cx="${cx}" cy="${r1(cy - 50 * s)}" rx="${r1(17 * s)}" ry="${r1(7 * s)}" fill="#EFD067"/>`;
+  [-22, 0, 22].forEach(a => { p += petal(a, .74, 'lpC', 4 * s); });
+  return p;
+}
+function lotusLeaf(P, cx, cy, rx, ry) {
+  let v = '';
+  for (let i = 0; i < 16; i++) { const a = i / 16 * Math.PI * 2; v += `M${cx} ${cy}L${r1(cx + Math.cos(a) * rx * .94)} ${r1(cy + Math.sin(a) * ry * .94)}`; }
+  return `<ellipse cx="${cx}" cy="${cy + 6}" rx="${rx}" ry="${ry}" fill="#4F7A57" opacity=".22"/><ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}" fill="url(#${P}lleaf)"/><path d="${v}" stroke="#4C7A4C" stroke-opacity=".38" stroke-width="1.4"/><ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}" fill="none" stroke="#B6D3A8" stroke-opacity=".6" stroke-width="2"/><path d="M${cx} ${cy}L${r1(cx + rx * .99)} ${r1(cy - ry * .22)}L${r1(cx + rx * .96)} ${r1(cy + ry * .3)}Z" fill="#CFE0D8"/>`;
+}
+function drawSen(m, P, rnd) {
+  const lp = (id, a, b, c2) => `<linearGradient id="${P}${id}" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="${a}"/><stop offset=".58" stop-color="${b}"/><stop offset="1" stop-color="${c2}"/></linearGradient>`;
+  const defs = `
+  <linearGradient id="${P}bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EAF1E7"/><stop offset=".55" stop-color="#F7EFEA"/><stop offset="1" stop-color="#F2DBD6"/></linearGradient>
+  ${lp('lpA', '#FFF6F8', '#F8CAD6', '#E8839F')}${lp('lpB', '#FFF1F4', '#F6B5C7', '#DE6A8C')}${lp('lpC', '#FFEFF3', '#F3A2B9', '#D4567C')}${lp('bud', '#A9CB98', '#F3B9C9', '#DA5F85')}
+  <radialGradient id="${P}lleaf" cx="45%" cy="45%" r="60%"><stop offset="0" stop-color="#9CC08F"/><stop offset="1" stop-color="#5B8A59"/></radialGradient>
+  <linearGradient id="${P}water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D6E6DF" stop-opacity="0"/><stop offset=".3" stop-color="#D3E3DC"/><stop offset="1" stop-color="#BBD3CB"/></linearGradient>
+  ${grainDefs(P)}`;
+  let back = `<rect width="800" height="1000" fill="url(#${P}bg)"/>${grainRect(P, .09)}`;
+  back += dongSon(400, 116, 224, '#A98549', .32);
+  back += `<rect x="0" y="850" width="800" height="150" fill="url(#${P}water)"/>`;
+  let waves = '';
+  for (const y of [896, 922, 948, 974]) { let d = `M0 ${y}`; for (let x = 0; x <= 800; x += 40) d += `Q${x + 10} ${y - 3} ${x + 20} ${y}T${x + 40} ${y}`; waves += `<path d="${d}"/>`; }
+  back += `<g fill="none" stroke="#9DBDB2" stroke-opacity=".5" stroke-width="1.3">${waves}</g>`;
+  back += lotusLeaf(P, 150, 924, 140, 40) + lotusLeaf(P, 660, 950, 122, 34);
+  back += `<g fill="none" stroke="#6E9461" stroke-linecap="round"><path d="M165 842Q172 884 158 930" stroke-width="6"/><path d="M628 868Q634 904 640 950" stroke-width="5"/><path d="M712 812Q718 870 704 936" stroke-width="4"/><path d="M315 905Q319 930 313 958" stroke-width="4"/></g>`;
+  back += `<path d="M295 888L335 888L327 906L303 906Z" fill="#8DB36B"/><ellipse cx="315" cy="888" rx="20" ry="6.5" fill="#B9D38E"/><g fill="#5E7F45"><circle cx="307" cy="887" r="2.2"/><circle cx="315" cy="885" r="2.2"/><circle cx="323" cy="887" r="2.2"/><circle cx="311" cy="891" r="2"/><circle cx="320" cy="891" r="2"/></g>`;
+  back += lotus(P, 165, 842, 1) + lotus(P, 628, 868, .78);
+  back += `<path d="M0 0C-20-22-17-60 0-84C17-60 20-22 0 0Z" transform="translate(712 812)" fill="url(#${P}bud)" stroke="#C9567A" stroke-opacity=".35"/><path d="M712 812C705 790 706 760 712 730" stroke="#C9567A" stroke-opacity=".3" fill="none"/>`;
+  back += `<g class="fx-hover"><g transform="translate(724 612) rotate(-18)"><g fill="#DDECF5" fill-opacity=".75" stroke="#8FB3C9" stroke-width=".9"><ellipse cx="-17" cy="-6" rx="18" ry="5.5" transform="rotate(-14 -17 -6)"/><ellipse cx="17" cy="-6" rx="18" ry="5.5" transform="rotate(14 17 -6)"/><ellipse cx="-15" cy="3" rx="15" ry="4.6" transform="rotate(12 -15 3)"/><ellipse cx="15" cy="3" rx="15" ry="4.6" transform="rotate(-12 15 3)"/></g><path d="M0-10L0 40" stroke="#3E5F7E" stroke-width="3.4" stroke-linecap="round"/><circle cx="0" cy="-12" r="4.4" fill="#3E5F7E"/></g></g>`;
+  let fx = '<g class="fx">';
+  for (let i = 0; i < 9; i++) { const dur = 7 + rnd() * 6; fx += `<circle cx="${r1(70 + rnd() * 660)}" cy="${r1(780 + rnd() * 170)}" r="${r1(1.6 + rnd() * 2)}" fill="#FFF8E6" class="fx-rise" style="animation-duration:${r1(dur)}s;animation-delay:${r1(-rnd() * dur)}s"/>`; }
+  return { defs, back, fx: fx + '</g>' };
+}
+
+/* ---------- Bố cục chữ từng mẫu ---------- */
+const LAYOUT = {
+  tet: {
+    eyebrow: { y: 350, f: FONT.script, wt: 700, s: 52, c: '#F6C55E', maxW: 600 },
+    name: { y: 458, f: FONT.display, wt: 600, max: 120, min: 30, maxW: 640, c: '#FFF3DA' },
+    badge: { y: 508, c: '#FFE2A0', fill: '#000000', fop: .2, stroke: '#E9B44C', sop: .9 },
+    wish: { top: 540, h: 176, bw: 600, f: FONT.display, wt: 400, st: 'italic', max: 28, min: 17, lh: 1.42, c: '#FBE7CC' },
+    date: { y1: 768, y2: 796, c1: '#F6C55E', c2: '#F2CFAF' },
+    sign: { y: 848, c1: '#F6C55E', c2: '#FFF3DA' },
+  },
+  trungthu: {
+    eyebrow: { y: 404, f: FONT.script, wt: 700, s: 50, c: '#F7C964', maxW: 580 },
+    name: { y: 508, f: FONT.display, wt: 600, max: 112, min: 30, maxW: 620, c: '#FFF5DF' },
+    badge: { y: 557, c: '#FCE3A1', fill: '#FFFFFF', fop: .06, stroke: '#F7C964', sop: .8 },
+    wish: { top: 588, h: 150, bw: 580, f: FONT.display, wt: 400, st: 'italic', max: 27, min: 17, lh: 1.42, c: '#ECE5F7' },
+    date: { y1: 792, y2: 820, c1: '#F7C964', c2: '#C9BFE3' },
+    sign: { y: 870, c1: '#F7C964', c2: '#FFF5DF' },
+  },
+  tho: {
+    eyebrow: { y: 126, f: FONT.ui, wt: 600, s: 17, ls: 7, c: '#A8231C', maxW: 480 },
+    big: { x: 376, y: 362, f: FONT.brush, wt: 400, s: 230, c: '#22170F' },
+    seal: { x: 601, y: 322, f: FONT.han, wt: 700, s: 44, c: '#FBEBD6' },
+    couplet: { xl: 91, xr: 709, ys: [252, 374, 496, 618], f: FONT.display, wt: 600, s: 29, c: '#F3D07C' },
+    line: { y: 440, f: FONT.display, wt: 500, st: 'italic', s: 30, c: '#A8231C', maxW: 480 },
+    name: { y: 512, f: FONT.display, wt: 600, max: 64, min: 26, maxW: 500, c: '#2A1A12' },
+    badge: { y: 558, c: '#8C1D17', fill: '#A8231C', fop: .07, stroke: '#A8231C', sop: .5 },
+    wish: { top: 590, h: 162, bw: 500, f: FONT.display, wt: 400, st: 'italic', max: 26, min: 16, lh: 1.42, c: '#4A3426' },
+    date: { y1: 790, y2: 818, c1: '#8C1D17', c2: '#6B5243' },
+    sign: { y: 870, c1: '#A8231C', c2: '#2A1A12' },
+  },
+  be: {
+    big: { x: 400, y: 268, f: FONT.round, wt: 800, s: 132, c: '#FFF8EE' },
+    eyebrow: { y: 382, f: FONT.round, wt: 600, s: 34, c: '#E0664A', maxW: 600 },
+    name: { y: 470, f: FONT.round, wt: 800, max: 108, min: 30, maxW: 620, c: '#2F5D8A' },
+    badge: { y: 520, c: '#2F5D8A', fill: '#FFFFFF', fop: .75, stroke: '#8AB4F8', sop: 1 },
+    wish: { top: 552, h: 132, bw: 580, f: FONT.ui, wt: 500, st: 'normal', max: 25, min: 16, lh: 1.45, c: '#5A4636' },
+    date: { y1: 716, y2: 742, c1: '#E0664A', c2: '#7A6656' },
+    sign: { y: 784, c1: '#E0664A', c2: '#2F5D8A', round: true },
+  },
+  sen: {
+    eyebrow: { y: 398, f: FONT.script, wt: 700, s: 50, c: '#B0496A', maxW: 600 },
+    name: { y: 496, f: FONT.display, wt: 600, max: 112, min: 30, maxW: 620, c: '#2D4A39' },
+    badge: { y: 546, c: '#2D4A39', fill: '#FFFFFF', fop: .55, stroke: '#8DB383', sop: 1 },
+    wish: { top: 578, h: 158, bw: 540, f: FONT.display, wt: 400, st: 'italic', max: 27, min: 16, lh: 1.42, c: '#4B3C3F' },
+    date: { y1: 770, y2: 797, c1: '#B0496A', c2: '#6E6264' },
+    sign: { y: 842, c1: '#B0496A', c2: '#2D4A39' },
+  },
+};
+const THEMES = { tet: drawTet, trungthu: drawTrungThu, tho: drawTho, be: drawBe, sen: drawSen };
+
+/* ---------- Đo & xếp chữ ---------- */
+const MC = document.createElement('canvas').getContext('2d');
+const fontStr = (sp, size) => `${sp.st || 'normal'} ${sp.wt || 400} ${r1(size)}px ${sp.f}`;
+function measure(text, sp, size) { MC.font = fontStr(sp, size); let w = MC.measureText(text).width; if (sp.ls) w += sp.ls * [...text].length; return w; }
+function fitSize(text, sp, maxSize, minSize, maxW) { const w = measure(text, sp, maxSize); return w > maxW ? Math.max(minSize, maxSize * maxW / w) : maxSize; }
+function wrapLines(text, sp, size, maxW) {
+  const out = [];
+  for (const para of text.split(/\n+/)) {
+    let cur = '';
+    for (const w of para.trim().split(/\s+/).filter(Boolean)) { const t = cur ? cur + ' ' + w : w; if (!cur || measure(t, sp, size) <= maxW) cur = t; else { out.push(cur); cur = w; } }
+    if (cur) out.push(cur);
+  }
+  return out;
+}
+function balanced(text, sp, size, maxW) {
+  const base = wrapLines(text, sp, size, maxW);
+  if (base.length < 2) return base;
+  let lo = maxW * .55, hi = maxW;
+  for (let i = 0; i < 12; i++) { const mid = (lo + hi) / 2; if (wrapLines(text, sp, size, mid).length <= base.length) hi = mid; else lo = mid; }
+  return wrapLines(text, sp, size, hi);
+}
+function fitBlock(text, box) {
+  for (let s = box.max; s >= box.min; s -= .5) { const lh = s * box.lh, lines = balanced(text, box, s, box.bw); if (lines.length * lh <= box.h) return { s, lh, lines }; }
+  const s = box.min, lh = s * box.lh, maxL = Math.max(1, Math.floor(box.h / lh));
+  let lines = balanced(text, box, s, box.bw);
+  if (lines.length > maxL) { lines = lines.slice(0, maxL); lines[maxL - 1] = lines[maxL - 1].replace(/\s*\S*$/, '') + '…'; }
+  return { s, lh, lines };
+}
+function layoutTexts(m) {
+  const L = LAYOUT[m.theme], items = [], geo = {};
+  const T = (t, x, y, sp, s) => items.push({ t, x, y, s, f: sp.f, wt: sp.wt || 400, st: sp.st || 'normal', c: sp.c, a: 'middle', ls: sp.ls || 0 });
+  if (m.theme === 'tho') {
+    T(m.thoTop, 400, L.eyebrow.y, L.eyebrow, L.eyebrow.s);
+    T('Thọ', L.big.x, L.big.y, L.big, L.big.s);
+    T('壽', L.seal.x, L.seal.y, L.seal, L.seal.s);
+    ['Phúc', 'Như', 'Đông', 'Hải'].forEach((w, i) => T(w, L.couplet.xl, L.couplet.ys[i], L.couplet, L.couplet.s));
+    ['Thọ', 'Tỷ', 'Nam', 'Sơn'].forEach((w, i) => T(w, L.couplet.xr, L.couplet.ys[i], L.couplet, L.couplet.s));
+    if (m.thoLine) T(m.thoLine, 400, L.line.y, L.line, fitSize(m.thoLine, L.line, L.line.s, 18, L.line.maxW));
+  } else {
+    if (m.theme === 'be' && m.showAge && m.age != null) { const t = String(m.age); T(t, L.big.x, t.length > 1 ? L.big.y - 6 : L.big.y, L.big, t.length > 1 ? 108 : L.big.s); }
+    T(m.eyebrow, 400, L.eyebrow.y, L.eyebrow, fitSize(m.eyebrow, L.eyebrow, L.eyebrow.s, 22, L.eyebrow.maxW));
+  }
+  T(m.nameText, 400, L.name.y, L.name, fitSize(m.nameText, L.name, L.name.max, L.name.min, L.name.maxW));
+  let top = L.wish.top, h = L.wish.h;
+  if (m.badge) {
+    const bs = { f: FONT.ui, wt: 600, ls: .3, c: L.badge.c }, tw = measure(m.badge, bs, 17);
+    geo.badge = { x: 400 - tw / 2 - 18, y: L.badge.y - 19, w: tw + 36, h: 38 };
+    T(m.badge, 400, L.badge.y + 6, bs, 17);
+  } else { top -= 34; h += 34; }
+  const fit = fitBlock(m.wish, L.wish), y0 = top + (h - fit.lines.length * fit.lh) / 2;
+  fit.lines.forEach((ln, i) => T(ln, 400, y0 + i * fit.lh + fit.lh / 2 + fit.s * .34, L.wish, fit.s));
+  T(m.date1, 400, L.date.y1, { f: FONT.ui, wt: 600, c: L.date.c1, ls: .6 }, 19);
+  T(m.date2, 400, L.date.y2, { f: FONT.ui, wt: 400, c: L.date.c2 }, 16.5);
+  if (m.sign) {
+    const sg = L.sign, round = !!sg.round;
+    T(m.sign.lead, 400, sg.y, { f: round ? FONT.round : FONT.script, wt: 600, c: sg.c1 }, round ? 24 : 30);
+    if (m.sign.from) { const fs = { f: round ? FONT.round : FONT.display, wt: round ? 700 : 600, c: sg.c2 }; T(m.sign.from, 400, sg.y + (round ? 28 : 32), fs, fitSize(m.sign.from, fs, round ? 22 : 24, 13, 340)); }
+  }
+  return { items, geo };
+}
+
+/* ---------- Dựng SVG ---------- */
+function textEl(it) {
+  return `<text x="${r1(it.x)}" y="${r1(it.y)}" font-family="${it.f.replace(/"/g, "'")}" font-size="${r1(it.s)}" font-weight="${it.wt}" font-style="${it.st}" fill="${it.c}" text-anchor="${it.a}"${it.ls ? ` letter-spacing="${it.ls}"` : ''}>${esc(it.t)}</text>`;
+}
+function badgeRect(m, lay) {
+  const g = lay.geo.badge; if (!g) return '';
+  const b = LAYOUT[m.theme].badge;
+  return `<rect x="${r1(g.x)}" y="${r1(g.y)}" width="${r1(g.w)}" height="${g.h}" rx="${g.h / 2}" fill="${b.fill}" fill-opacity="${b.fop}" stroke="${b.stroke}" stroke-opacity="${b.sop}" stroke-width="1.4"/>`;
+}
+function buildSVG(m, lay, o) {
+  const art = THEMES[m.theme](m, o.P, mulberry32(m.seed));
+  return `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 800 1000" width="${o.w || 800}" height="${o.h || 1000}" role="img" aria-label="${esc('Thiệp sinh nhật ' + m.full)}"><defs>${art.defs}</defs>${art.back}${badgeRect(m, lay)}${o.text ? lay.items.map(textEl).join('') : ''}${o.fx ? art.fx : ''}</svg>`;
+}
+async function renderPNG(m, lay, scale) {
+  const markup = buildSVG(m, lay, { P: 'x', text: false, fx: false, w: 800 * scale, h: 1000 * scale });
+  const url = URL.createObjectURL(new Blob([markup], { type: 'image/svg+xml;charset=utf-8' }));
+  try {
+    const img = new Image();
+    await new Promise((res, rej) => { img.onload = res; img.onerror = () => rej(new Error('svg')); img.src = url; });
+    const cv = document.createElement('canvas'); cv.width = 800 * scale; cv.height = 1000 * scale;
+    const ctx = cv.getContext('2d');
+    ctx.drawImage(img, 0, 0, cv.width, cv.height);
+    ctx.scale(scale, scale);
+    for (const it of lay.items) {
+      ctx.font = fontStr(it, it.s); ctx.fillStyle = it.c; ctx.textBaseline = 'alphabetic';
+      ctx.textAlign = it.a === 'middle' ? 'center' : it.a === 'end' ? 'right' : 'left';
+      if ('letterSpacing' in ctx) ctx.letterSpacing = (it.ls || 0) + 'px';
+      ctx.fillText(it.t, it.x, it.y);
+    }
+    return await new Promise((res, rej) => cv.toBlob(b => b ? res(b) : rej(new Error('blob')), 'image/png'));
+  } finally { URL.revokeObjectURL(url); }
+}
+
+/* ---------- Trạng thái & giao diện ---------- */
+const $ = s => document.querySelector(s);
+const SKEY = 'thiep-sinh-nhat-viet-v1', SIG = JSON.stringify(CONFIG);
+function parseDMY(s) {
+  const str = String(s || '').trim();
+  let t = str.split(/[\/.\-\s]+/).map(Number);
+  if (/^\d{4}-\d{1,2}-\d{1,2}$/.test(str)) t = [t[2], t[1], t[0]];
+  return [t[0] || 1, t[1] || 1, t[2] ? String(t[2]) : ''];
+}
+function fromConfig() {
+  const [d, m, y] = parseDMY(CONFIG.ngaySinh);
+  return { ten: CONFIG.ten, goi: CONFIG.goi, xh: CONFIG.xungHo, d, m, y, am: !!CONFIG.amLich, mien: CONFIG.mien === 'nam' ? 'nam' : 'bac', mau: CONFIG.mau, loi: CONFIG.loiChuc, dirty: !!CONFIG.loiChuc, tu: CONFIG.nguoiGui, tuoi: CONFIG.hienTuoi, mu: !!CONFIG.tuoiMu, nam: String(CONFIG.namToChuc), wishIdx: 0, example: false };
+}
+const params = (() => { try { return new URLSearchParams(location.search); } catch (e) { return new URLSearchParams(); } })();
+function applyParams(st) {
+  const g = k => params.get(k);
+  if (g('ten') != null) st.ten = g('ten');
+  if (g('goi') != null) st.goi = g('goi');
+  if (g('xh') && XH[g('xh')]) st.xh = g('xh');
+  if (g('ns')) { const [d, m, y] = parseDMY(g('ns')); Object.assign(st, { d, m, y }); }
+  if (g('al') != null) st.am = g('al') === '1';
+  if (g('mien')) st.mien = g('mien') === 'nam' ? 'nam' : 'bac';
+  if (g('mau') && (g('mau') === 'auto' || THEME_NAME[g('mau')])) st.mau = g('mau');
+  if (g('loi') != null) { st.loi = g('loi'); st.dirty = !!g('loi').trim(); }
+  if (g('tu') != null) st.tu = g('tu');
+  if (['auto', 'on', 'off'].includes(g('tuoi'))) st.tuoi = g('tuoi');
+  if (g('mu') != null) st.mu = g('mu') === '1';
+  if (g('nam')) st.nam = g('nam');
+  if (g('w')) st.wishIdx = +g('w') || 0;
+}
+let state = fromConfig();
+const hasParams = ['ten', 'ns', 'xh', 'mau', 'loi', 'tu'].some(k => params.has(k));
+if (hasParams) applyParams(state);
+else { try { const saved = JSON.parse(localStorage.getItem(SKEY) || 'null'); if (saved && saved.sig === SIG && saved.st) state = Object.assign(state, saved.st); } catch (e) { /* bộ nhớ trình duyệt không dùng được */ } }
+function persist() { try { localStorage.setItem(SKEY, JSON.stringify({ sig: SIG, st: state })); } catch (e) { /* bỏ qua */ } }
+
+function presetState(kind) {
+  const T = todayParts(), tJD = jdFromDate(T.d, T.m, T.y), Lt = solarToLunar(T.d, T.m, T.y);
+  const at = jd => { const [d, m, y] = jdToDate(jd); return { d, m, y }; };
+  const quiet = start => {
+    for (let k = start; k < start + 220; k++) { const D = at(tJD + k), L = solarToLunar(D.d, D.m, D.y); if (!tetContext(tJD + k, L).inWin && !ttContext(tJD + k, L).inWin && !(D.m === 2 && D.d === 29)) return D; }
+    return at(tJD + start);
+  };
+  const lunarNext = (d, mo) => { let s = lunarToSolar(d, mo, Lt.year, false); if (s.jd < tJD - GRACE_DAYS) s = lunarToSolar(d, mo, Lt.year + 1, false); return { d: s.day, m: s.month, y: s.year }; };
+  const P = {
+    tet: [lunarNext(2, 1), 'Nguyễn Thị Minh Anh', '', 'chị', 'Cả team', 32],
+    trungthu: [lunarNext(15, 8), 'Trần Gia Huy', 'Bin', 'bé', 'Bố mẹ', 7],
+    tho: [quiet(24), 'Nguyễn Thị Lan', '', 'bà', '', 70],
+    be: [quiet(18), 'Phạm Bảo Ngọc', 'Bống', 'bé', 'Cả nhà', 1],
+    sen: [quiet(10), 'Hoàng Minh Đức', '', 'anh', 'Cả team', 34],
+  }[kind];
+  const [D, ten, goi, xh, tu, yo] = P;
+  return Object.assign({}, state, { ten, goi, xh, tu, d: D.d, m: D.m, y: String(D.y - yo), am: false, mau: 'auto', loi: '', dirty: false, tuoi: 'auto', mu: false, nam: 'auto', wishIdx: 0, example: true });
+}
+
+const radio = (name, v) => { const el = document.querySelector(`input[name="${name}"][value="${v}"]`); if (el) el.checked = true; };
+function buildSelects() {
+  const T = todayParts();
+  $('#f-d').innerHTML = Array.from({ length: 31 }, (_, i) => `<option value="${i + 1}">${i + 1}</option>`).join('');
+  $('#f-m').innerHTML = Array.from({ length: 12 }, (_, i) => `<option value="${i + 1}">Tháng ${i + 1}</option>`).join('');
+  $('#f-nam').innerHTML = `<option value="auto">Tự động (sinh nhật sắp tới)</option>` + [T.y - 1, T.y, T.y + 1, T.y + 2].map(y => `<option value="${y}">${y}</option>`).join('');
+}
+function fillForm() {
+  $('#f-ten').value = state.ten; $('#f-goi').value = state.goi; $('#f-xh').value = state.xh;
+  $('#f-d').value = String(state.d); $('#f-m').value = String(state.m); $('#f-y').value = state.y;
+  $('#f-tu').value = state.tu; $('#f-nam').value = [...$('#f-nam').options].some(o => o.value === String(state.nam)) ? String(state.nam) : 'auto';
+  radio('lich', state.am ? 'am' : 'duong'); radio('mau', state.mau); radio('mien', state.mien); radio('tuoi', state.tuoi); radio('mu', state.mu ? '1' : '0');
+  $('#f-loi').value = state.dirty ? state.loi : '';
+  $('#exampleTag').hidden = !state.example;
+}
+function updatePanel(m) {
+  $('#autoName').textContent = '→ ' + THEME_NAME[m.auto];
+  const auto = callNameOf(titleCase(state.ten || ''));
+  $('#h-ten').textContent = state.goi.trim() ? `Trên thiệp: “${m.callName}”` : `Tên gọi tự động: “${auto || '…'}”. Có thể ghi biệt danh hoặc “Mẹ yêu” ở ô Tên gọi.`;
+  $('#h-ns').textContent = m.hasYear ? `Âm lịch: ${m.birthLunar}` : 'Năm sinh không bắt buộc. Thêm năm để hiện tuổi, con giáp và mừng theo âm lịch.';
+  const am = $('#lich-am'); am.disabled = !m.hasYear; if (!m.hasYear && am.checked) radio('lich', 'duong');
+  if (!state.dirty) $('#f-loi').value = m.wishAuto;
+  $('#f-loi').placeholder = m.wishAuto;
+  const rows = [
+    ['Sinh nhật', 'Birthday', `${THU[weekday(m.C.jd)]}, ${pad2(m.C.d)}/${pad2(m.C.m)}/${m.C.y}<small>${m.relText}${m.lunarMode ? ' · mừng theo âm lịch' : ''}</small>`],
+    ['Âm lịch', 'Lunar', cap(lunarText(m.Lc))],
+    ['Tuổi', 'Age', m.hasYear ? `tròn ${m.age} · tuổi mụ ${m.mu}<small>tuổi ${canChi(m.Lb.year)}, con ${conGiap(m.Lb.year, m.mien)}</small>` : 'chưa có năm sinh<small>add a birth year for age and zodiac</small>'],
+    ['Mẫu', 'Design', m.manual ? `${THEME_NAME[m.theme]}<small>bạn tự chọn; tự động sẽ là ${THEME_NAME[m.auto]}</small>` : `${THEME_NAME[m.theme]}<small>${cap(m.whyVi)} · ${m.whyEn}</small>`],
+  ];
+  $('#why').innerHTML = rows.map(([vi, en, v]) => `<dt>${vi}<br><span class="en">${en}</span></dt><dd>${v}</dd>`).join('');
+}
+
+let current = null, seq = 0;
+function fontJobs(lay) { const map = new Map(); for (const it of lay.items) { const k = fontStr(it, 40); map.set(k, (map.get(k) || '') + it.t); } return [...map]; }
+function paint(m, lay) {
+  current = { m, lay };
+  $('#cardFrame').innerHTML = buildSVG(m, lay, { P: 'c', text: true, fx: true });
+  if (!$('#viewer').hidden) $('#viewerCard').innerHTML = buildSVG(m, lay, { P: 'v', text: true, fx: true });
+}
+async function render() {
+  const my = ++seq, m = compute(state);
+  let lay = layoutTexts(m);
+  updatePanel(m);
+  const jobs = fontJobs(lay), fs = document.fonts;
+  const ready = !fs || !fs.check || jobs.every(([k, t]) => { try { return fs.check(k, t); } catch (e) { return true; } });
+  if (!ready) {
+    paint(m, lay);
+    await Promise.race([Promise.all(jobs.map(([k, t]) => fs.load(k, t).catch(() => null))), new Promise(r => setTimeout(r, 3000))]);
+    if (my !== seq) return;
+    lay = layoutTexts(m);
+  }
+  paint(m, lay);
+  persist();
+}
+let timer = 0;
+const soon = () => { clearTimeout(timer); timer = setTimeout(render, 90); };
+
+let statusTimer = 0;
+function setStatus(msg) { $('#status').textContent = msg; clearTimeout(statusTimer); statusTimer = setTimeout(() => { $('#status').textContent = ''; }, 6000); }
+const slug = s => strip(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'thiep';
+
+let saverP = null;
+function getSaver() {
+  if (!saverP) saverP = (async () => {
+    if (window.claude && typeof window.claude.use === 'function') {
+      try { const dl = await window.claude.use('downloads'); if (dl) return (name, blob) => dl.save({ filename: name, data: blob }); } catch (e) { /* không có */ }
+      return null;
+    }
+    return async (name, blob) => {
+      const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = name;
+      document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 2000);
+    };
+  })();
+  return saverP;
+}
+async function savePNG() {
+  if (!current) return;
+  setStatus('Đang tạo ảnh…');
+  try {
+    const blob = await renderPNG(current.m, current.lay, 2);
+    const saver = await getSaver();
+    if (!saver) { setStatus('Không lưu được ảnh ở đây. Mở xem toàn màn hình rồi chụp màn hình nhé.'); return; }
+    const name = `thiep-sinh-nhat-${slug(current.m.callName || current.m.full)}.png`;
+    await saver(name, blob);
+    setStatus('Đã tải ảnh ' + name);
+  } catch (e) {
+    setStatus(e && e.code === 'declined' ? 'Đã huỷ lưu ảnh.' : 'Chưa tạo được ảnh. Hãy thử lại hoặc chụp màn hình thiệp.');
+  }
+}
+function copyText(text, okMsg) {
+  const fallback = () => {
+    const ta = document.createElement('textarea'); ta.value = text; ta.setAttribute('readonly', ''); ta.style.cssText = 'position:fixed;opacity:0;left:0;top:0';
+    document.body.appendChild(ta); ta.select(); let ok = false; try { ok = document.execCommand('copy'); } catch (e) { ok = false; } ta.remove();
+    setStatus(ok ? okMsg : 'Không chép được tự động. Hãy bôi đen và sao chép.');
+  };
+  try { navigator.clipboard.writeText(text).then(() => setStatus(okMsg), fallback); } catch (e) { fallback(); }
+}
+function shareURL() {
+  const p = new URLSearchParams();
+  p.set('ten', state.ten); if (state.goi) p.set('goi', state.goi); p.set('xh', state.xh);
+  p.set('ns', `${pad2(state.d)}/${pad2(state.m)}${/^\d{4}$/.test(state.y) ? '/' + state.y : ''}`);
+  if (state.am) p.set('al', '1'); if (state.mien !== 'bac') p.set('mien', state.mien); if (state.mau !== 'auto') p.set('mau', state.mau);
+  if (state.dirty && state.loi.trim()) p.set('loi', state.loi.trim()); else if (state.wishIdx) p.set('w', String(state.wishIdx));
+  if (state.tu) p.set('tu', state.tu); if (state.tuoi !== 'auto') p.set('tuoi', state.tuoi); if (state.mu) p.set('mu', '1'); if (state.nam !== 'auto') p.set('nam', state.nam);
+  p.set('xem', '1');
+  return location.origin + location.pathname + '?' + p.toString();
+}
+function openViewer() {
+  if (!current) return;
+  $('#viewerCard').innerHTML = buildSVG(current.m, current.lay, { P: 'v', text: true, fx: true });
+  $('#viewer').hidden = false; document.documentElement.style.overflow = 'hidden';
+  $('#viewerClose').focus();
+}
+function closeViewer() { $('#viewer').hidden = true; document.documentElement.style.overflow = ''; }
+
+/* ---------- Gắn sự kiện ---------- */
+buildSelects();
+fillForm();
+const bind = (sel, ev, fn) => $(sel).addEventListener(ev, fn);
+bind('#f-ten', 'input', e => { state.ten = e.target.value; state.example = false; $('#exampleTag').hidden = true; soon(); });
+bind('#f-goi', 'input', e => { state.goi = e.target.value; soon(); });
+bind('#f-xh', 'change', e => { state.xh = e.target.value; render(); });
+bind('#f-d', 'change', e => { state.d = +e.target.value; render(); });
+bind('#f-m', 'change', e => { state.m = +e.target.value; render(); });
+bind('#f-y', 'input', e => { const v = e.target.value.replace(/\D/g, '').slice(0, 4); if (v !== e.target.value) e.target.value = v; state.y = v; if (!v.length || v.length === 4) render(); });
+bind('#f-tu', 'input', e => { state.tu = e.target.value; soon(); });
+bind('#f-loi', 'input', e => { state.loi = e.target.value; state.dirty = true; soon(); });
+bind('#f-nam', 'change', e => { state.nam = e.target.value; render(); });
+document.querySelectorAll('input[name="lich"]').forEach(el => el.addEventListener('change', e => { state.am = e.target.value === 'am'; render(); }));
+document.querySelectorAll('input[name="mau"]').forEach(el => el.addEventListener('change', e => { state.mau = e.target.value; render(); }));
+document.querySelectorAll('input[name="mien"]').forEach(el => el.addEventListener('change', e => { state.mien = e.target.value; render(); }));
+document.querySelectorAll('input[name="tuoi"]').forEach(el => el.addEventListener('change', e => { state.tuoi = e.target.value; render(); }));
+document.querySelectorAll('input[name="mu"]').forEach(el => el.addEventListener('change', e => { state.mu = e.target.value === '1'; render(); }));
+bind('#btnNextWish', 'click', () => { state.wishIdx = (state.wishIdx || 0) + 1; state.dirty = false; state.loi = ''; render(); });
+document.querySelectorAll('[data-preset]').forEach(b => b.addEventListener('click', () => { state = presetState(b.dataset.preset); fillForm(); render(); }));
+bind('#btnPng', 'click', savePNG);
+bind('#viewerPng', 'click', savePNG);
+bind('#btnView', 'click', openViewer);
+bind('#viewerClose', 'click', closeViewer);
+bind('#viewer', 'click', e => { if (e.target.id === 'viewer') closeViewer(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && !$('#viewer').hidden) closeViewer(); });
+bind('#btnCopy', 'click', () => { if (current) copyText(current.m.wish, 'Đã chép lời chúc.'); });
+bind('#form', 'submit', e => e.preventDefault());
+const hosted = /^https?:$/.test(location.protocol) && !window.claude;
+if (hosted) { $('#btnLink').hidden = false; bind('#btnLink', 'click', () => copyText(shareURL(), 'Đã chép link thiệp. Dán vào Zalo, Messenger hay email để gửi.')); }
+
+render().then(() => {
+  if (params.get('xem') === '1') { $('#viewerClose').textContent = 'Tự làm thiệp'; openViewer(); }
+});
+})();
+
+</script>
+</body>
+</html>
