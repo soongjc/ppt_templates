@@ -159,7 +159,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--focus);outline:none;b
 
       <form class="form" id="form" autocomplete="off" novalidate>
         <div class="field">
-          <div class="lbl-row"><label for="f-ten">Họ và tên <span class="en">Full name</span></label><span class="tag" id="exampleTag" hidden>Ví dụ</span></div>
+          <div class="lbl-row"><label for="f-ten">Họ và tên <span class="en">Name(s), comma-separated</span></label><span class="tag" id="exampleTag" hidden>Ví dụ</span></div>
           <input id="f-ten" type="text" spellcheck="false" autocapitalize="words" placeholder="Nguyễn Thị Minh Anh">
           <p class="hint" id="h-ten"></p>
         </div>
@@ -173,7 +173,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--focus);outline:none;b
             <select id="f-xh">
               <optgroup label="Bạn bè, đồng nghiệp">
                 <option value="chị">chị · older woman</option><option value="anh">anh · older man</option>
-                <option value="em">em · younger</option><option value="bạn">bạn · friend</option><option value="sếp">sếp · boss</option>
+                <option value="em">em · younger</option><option value="bạn">bạn · friend</option><option value="sếp">sếp · boss</option><option value="mọi người">mọi người · everyone (group)</option>
               </optgroup>
               <optgroup label="Gia đình">
                 <option value="mẹ">mẹ · mum</option><option value="bố">bố · dad</option>
@@ -413,7 +413,7 @@ const strip = s => s.normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/đ/g, 'd'
 // Xưng hô: g = giới (m/f), grp = nhóm quan hệ, solo = không kèm tên trong câu chúc
 const XH = {
   'anh': { g: 'm', grp: 'peer' }, 'chị': { g: 'f', grp: 'peer' }, 'em': { g: '', grp: 'peer' },
-  'bạn': { g: '', grp: 'peer' }, 'sếp': { g: '', grp: 'peer' },
+  'bạn': { g: '', grp: 'peer' }, 'sếp': { g: '', grp: 'peer' }, 'mọi người': { g: '', grp: 'peer', solo: true },
   'bố': { g: 'm', grp: 'parent', solo: true }, 'mẹ': { g: 'f', grp: 'parent', solo: true },
   'ba': { g: 'm', grp: 'parent', solo: true }, 'má': { g: 'f', grp: 'parent', solo: true },
   'ông': { g: 'm', grp: 'elder', solo: true }, 'bà': { g: 'f', grp: 'elder', solo: true },
@@ -434,6 +434,7 @@ function callNameOf(full) {
   if (t.length < 2) return t[0] || '';
   const first = strip(t[0]).toLowerCase(), last = t[t.length - 1].toLocaleLowerCase('vi');
   if (HO_TAY.has(last) && !HO.has(first)) return t[t.length - 2];   // "Minh Anh Nguyễn" → Anh
+  if (t.length === 2 && !HO.has(first)) return t.join(' ');           // "Minh Anh" (không có họ) → giữ nguyên
   return t[t.length - 1];                                            // "Nguyễn Thị Minh Anh" → Anh
 }
 
@@ -566,10 +567,18 @@ function compute(st) {
 
   // Tên & xưng hô
   const xh = XH[st.xh] ? st.xh : 'anh';
-  const full = titleCase(st.ten || '') || 'Bạn';
-  const callName = (st.goi || '').normalize('NFC').trim() || callNameOf(full);
+  // Nhiều người cùng ngày sinh: tên cách nhau bằng dấu phẩy, chấm phẩy hoặc xuống dòng
+  const people = String(st.ten || '').split(/[,;\n]+/).map(titleCase).filter(Boolean);
+  if (!people.length) people.push('Bạn');
+  const many = people.length > 1;
+  const full = people.join(', ');
+  const calls = many ? people.map(callNameOf) : [(st.goi || '').normalize('NFC').trim() || callNameOf(people[0])];
+  const callName = calls.join(', ');
   const solo = XH[xh].solo;
-  const pn = solo ? xh : `${xh} ${callName}`;
+  const listVi = a => a.length < 2 ? a[0] : a.slice(0, -1).join(', ') + ' và ' + a[a.length - 1];
+  const group = xh === 'mọi người' ? 'mọi người' : 'các ' + xh;
+  const pn = !many ? (solo ? xh : `${xh} ${callName}`) : xh === 'mọi người' ? 'mọi người' : calls.length <= 3 ? listVi(calls.map(c => `${xh} ${c}`)) : group;
+  const pp = many ? group : xh;
   const isThoiNoi = theme === 'be' && age === 1;
   const isKid = age != null && age <= 12;
 
@@ -578,10 +587,10 @@ function compute(st) {
   const bank = WISH[bankKey];
   const idx = (hashStr(full + bankKey) + (st.wishIdx || 0)) % bank.length;
   let wishAuto = bank[idx]
-    .replace(/\{pn\}/g, pn).replace(/\{p\}/g, xh).replace(/\{nam\}/g, tet.nam)
+    .replace(/\{pn\}/g, pn).replace(/\{p\}/g, pp).replace(/\{nam\}/g, tet.nam)
     .replace(/\{hoa\}/g, st.mien === 'nam' ? 'hoa mai' : 'hoa đào')
     .replace(/\{banh\}/g, st.mien === 'nam' ? 'bánh tét' : 'bánh chưng');
-  if (theme !== 'tho') {
+  if (theme !== 'tho' && !many) {
     if (XH[xh].grp === 'parent') wishAuto += ` Con yêu ${xh} nhiều lắm!`;
     else if (xh === 'con') wishAuto += ' Cả nhà yêu con nhiều lắm!';
   }
@@ -631,6 +640,7 @@ function compute(st) {
   return {
     theme, auto, whyVi, whyEn, manual: theme !== auto,
     xh, pn, full, callName, nameText: theme === 'tho' ? full : callName,
+    names: theme === 'tho' ? people : calls, many,
     hasYear, y, d, m, Lb, C, Lc, age, mu, ageTho, lunarMode, isThoiNoi, isKid, showAge,
     eyebrow, badge, wish, wishAuto, date1, date2, relText, sign, thoTop, thoLine,
     mien: st.mien === 'nam' ? 'nam' : 'bac', tet, tt,
@@ -1141,6 +1151,13 @@ function fitBlock(text, box) {
   if (lines.length > maxL) { lines = lines.slice(0, maxL); lines[maxL - 1] = lines[maxL - 1].replace(/\s*\S*$/, '') + '…'; }
   return { s, lh, lines };
 }
+function nameLines(names, sp, s, maxW) {
+  const sep = '  ·  ', wrap = w => { const out = []; let cur = ''; for (const n of names) { const t = cur ? cur + sep + n : n; if (!cur || measure(t, sp, s) <= w) cur = t; else { out.push(cur); cur = n; } } if (cur) out.push(cur); return out; };
+  const base = wrap(maxW); if (base.length < 2) return base;
+  let lo = maxW * .4, hi = maxW;
+  for (let i = 0; i < 12; i++) { const mid = (lo + hi) / 2; if (wrap(mid).length <= base.length) hi = mid; else lo = mid; }
+  return wrap(hi);
+}
 function layoutTexts(m) {
   const L = LAYOUT[m.theme], items = [], geo = {};
   const T = (t, x, y, sp, s) => items.push({ t, x, y, s, f: sp.f, wt: sp.wt || 400, st: sp.st || 'normal', c: sp.c, a: 'middle', ls: sp.ls || 0 });
@@ -1155,14 +1172,28 @@ function layoutTexts(m) {
     if (m.theme === 'be' && m.showAge && m.age != null) { const t = String(m.age); T(t, L.big.x, t.length > 1 ? L.big.y - 6 : L.big.y, L.big, t.length > 1 ? 108 : L.big.s); }
     T(m.eyebrow, 400, L.eyebrow.y, L.eyebrow, fitSize(m.eyebrow, L.eyebrow, L.eyebrow.s, 22, L.eyebrow.maxW));
   }
-  T(m.nameText, 400, L.name.y, L.name, fitSize(m.nameText, L.name, L.name.max, L.name.min, L.name.maxW));
-  let top = L.wish.top, h = L.wish.h;
+  // Tên: một người = một dòng lớn; nhiều người = khối tên tự xuống dòng, chữ nhỏ dần, đẩy phần dưới xuống
+  let shift = 0;
+  if (!m.many) T(m.nameText, 400, L.name.y, L.name, fitSize(m.nameText, L.name, L.name.max, L.name.min, L.name.maxW));
+  else {
+    const sp = L.name, top0 = L.name.y - sp.max * .74, bottom0 = L.name.y + sp.max * .24, maxH = m.names.length <= 3 ? 150 : 230;
+    let pick = null;
+    for (let s = Math.min(sp.max, 92); s >= 18; s -= 2) {
+      const lines = nameLines(m.names, sp, s, sp.maxW), lh = s * 1.12;
+      pick = { s, lines, lh };
+      if (lines.length * lh <= maxH && lines.every(l => measure(l, sp, s) <= sp.maxW)) break;
+    }
+    const blockH = pick.lines.length * pick.lh;
+    pick.lines.forEach((ln, i) => T(ln, 400, top0 + i * pick.lh + pick.s * .9, sp, pick.s));
+    shift = Math.max(0, Math.min(170, top0 + blockH - bottom0));
+  }
+  let top = L.wish.top + shift, h = Math.max(96, L.wish.h - shift);
   if (m.badge) {
-    const bs = { f: FONT.ui, wt: 600, ls: .3, c: L.badge.c }, tw = measure(m.badge, bs, 17);
-    geo.badge = { x: 400 - tw / 2 - 18, y: L.badge.y - 19, w: tw + 36, h: 38 };
-    T(m.badge, 400, L.badge.y + 6, bs, 17);
+    const bs = { f: FONT.ui, wt: 600, ls: .3, c: L.badge.c }, tw = measure(m.badge, bs, 17), by = L.badge.y + shift;
+    geo.badge = { x: 400 - tw / 2 - 18, y: by - 19, w: tw + 36, h: 38 };
+    T(m.badge, 400, by + 6, bs, 17);
   } else { top -= 34; h += 34; }
-  const fit = fitBlock(m.wish, L.wish), y0 = top + (h - fit.lines.length * fit.lh) / 2;
+  const fit = fitBlock(m.wish, Object.assign({}, L.wish, { h })), y0 = top + (h - fit.lines.length * fit.lh) / 2;
   fit.lines.forEach((ln, i) => T(ln, 400, y0 + i * fit.lh + fit.lh / 2 + fit.s * .34, L.wish, fit.s));
   T(m.date1, 400, L.date.y1, { f: FONT.ui, wt: 600, c: L.date.c1, ls: .6 }, 19);
   T(m.date2, 400, L.date.y2, { f: FONT.ui, wt: 400, c: L.date.c2 }, 16.5);
@@ -1280,7 +1311,9 @@ function fillForm() {
 function updatePanel(m) {
   $('#autoName').textContent = '→ ' + THEME_NAME[m.auto];
   const auto = callNameOf(titleCase(state.ten || ''));
-  $('#h-ten').textContent = state.goi.trim() ? `Trên thiệp: “${m.callName}”` : `Tên gọi tự động: “${auto || '…'}”. Có thể ghi biệt danh hoặc “Mẹ yêu” ở ô Tên gọi.`;
+  $('#h-ten').textContent = m.many
+    ? `${m.names.length} người cùng ngày sinh: ${m.names.join(', ')}. Ô Tên gọi chỉ dùng khi có một người.`
+    : state.goi.trim() ? `Trên thiệp: “${m.callName}”` : `Tên gọi tự động: “${auto || '…'}”. Nhiều người cùng ngày sinh? Ghi các tên cách nhau bằng dấu phẩy.`;
   $('#h-ns').textContent = m.hasYear ? `Âm lịch: ${m.birthLunar}` : 'Năm sinh không bắt buộc. Thêm năm để hiện tuổi, con giáp và mừng theo âm lịch.';
   const am = $('#lich-am'); am.disabled = !m.hasYear; if (!m.hasYear && am.checked) radio('lich', 'duong');
   if (!state.dirty) $('#f-loi').value = m.wishAuto;
@@ -1344,7 +1377,7 @@ async function savePNG() {
     const blob = await renderPNG(current.m, current.lay, 2);
     const saver = await getSaver();
     if (!saver) { setStatus('Không lưu được ảnh ở đây. Mở xem toàn màn hình rồi chụp màn hình nhé.'); return; }
-    const name = `thiep-sinh-nhat-${slug(current.m.callName || current.m.full)}.png`;
+    const name = `thiep-sinh-nhat-${slug(current.m.many ? current.m.names[0] + '-va-' + (current.m.names.length - 1) + '-nguoi' : current.m.callName || current.m.full)}.png`;
     await saver(name, blob);
     setStatus('Đã tải ảnh ' + name);
   } catch (e) {
